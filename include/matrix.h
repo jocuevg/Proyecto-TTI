@@ -23,6 +23,10 @@ public:
 	Matrix& operator * (Matrix &m);
 	Matrix& operator / (Matrix &m);
 	Matrix& operator = (Matrix &m);
+	Matrix& operator + (const double x);
+	Matrix& operator - (const double x);
+	Matrix& operator * (const double x);
+	Matrix& operator / (const double x);
 	
 	// Non-member operators
 	friend ostream& operator << (ostream &o, Matrix &m);
