@@ -1,5 +1,4 @@
 #include "..\include\matrix.h"
-#include "matrix.h"
 
 Matrix::Matrix(const int n_row, const int n_column)
 {

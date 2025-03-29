@@ -38,6 +38,6 @@ ostream& operator << (ostream &o, Matrix &m);
 // Methods
 Matrix& zeros(const int n_row, const int n_column);
 Matrix& eye(const int n_row);
-Matrix& transpose(const Matrix &m);
-Matrix& inv(const Matrix &m);
+Matrix& transpose(Matrix &m);
+Matrix& inv(Matrix &m);
 #endif
