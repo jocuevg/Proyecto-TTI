@@ -90,6 +90,20 @@ int m_zeros_01() {
     return 0;
 }
 
+int m_zeros_02() {
+    int f = 3;
+	
+	Matrix A(f);
+	A(1,1) = 0; A(1,2) = 0; A(1,3) = 0;
+
+	Matrix B = zeros(3);
+    
+    _assert(m_equals(A, B, 1e-10));
+    
+    return 0;
+}
+
+
 int m_mul_01() {
     int f = 3;
     int c = 3;
@@ -288,12 +302,25 @@ int m_div_02() {
     return 0;
 }
 
+int m_norm_01() {
+    int f = 3;
+
+	Matrix A(f);
+	A(1,1) = 0; A(1,2) =  3; A(1,3) = 4;
+
+
+    _assert(norm(A)==5);
+    
+    return 0;
+}
+
 
 int all_tests()
 {
     _verify(m_sum_01);
     _verify(m_sub_01);
     _verify(m_zeros_01);
+    _verify(m_zeros_02);
 	_verify(m_mul_01);
 	_verify(m_eq_01);
 	_verify(m_eye_01);

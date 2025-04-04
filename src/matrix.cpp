@@ -24,6 +24,29 @@ Matrix::Matrix(const int n_row, const int n_column)
 	}
 }
 
+Matrix::Matrix(const int v_size)
+{
+	if (v_size < 0)
+	{
+		cout << "Vector create: error in n_size\n";
+		exit(EXIT_FAILURE);
+	}
+
+	this->n_row = 1;
+	this->n_column = v_size;
+	this->data = (double **)malloc(n_row * sizeof(double *));
+
+	if (this->data == NULL)
+	{
+		cout << "Vector create: error in data\n";
+		exit(EXIT_FAILURE);
+	}
+
+
+	this->data[0] = (double *)calloc(v_size, sizeof(double));
+
+}
+
 double &Matrix::operator()(const int row, const int column)
 {
 	if (row <= 0 || row > this->n_row || column <= 0 || column > this->n_column)
@@ -33,6 +56,17 @@ double &Matrix::operator()(const int row, const int column)
 	}
 
 	return this->data[row - 1][column - 1];
+}
+
+double &Matrix::operator()(const int n)
+{
+	if (n <= 0 || n > this->n_row*this->n_column)
+	{
+		cout << "Vector get: error in row/column\n";
+		exit(EXIT_FAILURE);
+	}
+
+	return this->data[(n - 1)/this->n_column][(n - 1)%this->n_column];
 }
 
 Matrix &Matrix::operator+(Matrix &m)
@@ -99,6 +133,18 @@ Matrix &zeros(const int n_row, const int n_column)
 		{
 			(*m_aux)(i, j) = 0;
 		}
+	}
+
+	return (*m_aux);
+}
+
+Matrix &zeros(const int n)
+{
+	Matrix *m_aux = new Matrix(n);
+
+	for (int i = 1; i <= n; i++)
+	{
+		(*m_aux)(i) = 0;
 	}
 
 	return (*m_aux);
@@ -342,4 +388,59 @@ Matrix &Matrix::operator/(const double x)
 	}
 
 	return *m_aux;
+}
+
+double norm(Matrix &m)
+{
+
+	if (m.n_row != 1)
+	{
+		cout << "Matrix inversion error: Matrix is not square\n";
+		exit(EXIT_FAILURE);
+	}
+	double res=0;
+
+	for (int i = 1; i <= m.n_column; i++)
+	{
+		res += pow(m(1, i),2);
+	}
+
+	return sqrt(res);
+}
+
+double dot(Matrix &m,Matrix &n)
+{
+
+	if (m.n_row != 1 || n.n_row!=1 || m.n_column!=n.n_column)
+	{
+		cout << "Matrix inversion error: Matrix is not square\n";
+		exit(EXIT_FAILURE);
+	}
+	double res=0;
+
+	for (int i = 1; i <= m.n_column; i++)
+	{
+		res += m(1, i)*n(1,i);
+	}
+
+	return res;
+}
+
+Matrix & cross(Matrix &m,Matrix &n)
+{
+
+	if (m.n_row != 1 || n.n_row!=1 || m.n_column!=n.n_column || m.n_column!=3)
+	{
+		cout << "Matrix inversion error: Matrix is not square\n";
+		exit(EXIT_FAILURE);
+	}
+
+	Matrix *m_aux = new Matrix(3);
+
+	(*m_aux)(1, 1) = m(1, 2) * n(1, 3) - m(1, 3) * n(1, 2);  
+    (*m_aux)(1, 2) = m(1, 3) * n(1, 1) - m(1, 1) * n(1, 3);  
+    (*m_aux)(1, 3) = m(1, 1) * n(1, 2) - m(1, 2) * n(1, 1);  
+
+    return *m_aux;
+
 }

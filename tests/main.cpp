@@ -4,6 +4,10 @@
 using namespace std;
 
 int main() {
+    Matrix v(3);
+    v(2)=5;
+    cout << v;
+
     Matrix M1(3, 2);
 	M1(1,1) = 5;
 	
