@@ -314,6 +314,39 @@ int m_norm_01() {
     return 0;
 }
 
+int m_dot_01() {
+    int f = 3;
+
+	Matrix A(f);
+	A(1,1) = 0; A(1,2) =  3; A(1,3) = 4;
+
+	Matrix B(f);
+	B(1,1) = 0; B(1,2) =  2; B(1,3) = 1;
+
+
+    _assert(dot(A,B)==10);
+    
+    return 0;
+}
+
+int m_cross_01() {
+    int f = 3;
+
+	Matrix A(f);
+	A(1,1) = 0; A(1,2) =  3; A(1,3) = 4;
+
+	Matrix B(f);
+	B(1,1) = 0; B(1,2) =  2; B(1,3) = 1;
+
+	Matrix R(f);
+	R(1,1) = -5; R(1,2) =  0; R(1,3) = 0;
+
+	Matrix C=cross(A,B);
+
+	_assert(m_equals(C, R, 1e-10));
+    
+    return 0;
+}
 
 int all_tests()
 {
@@ -330,6 +363,9 @@ int all_tests()
 	_verify(m_sub_02);
 	_verify(m_mul_02);
 	_verify(m_div_02);
+	_verify(m_norm_01);
+	_verify(m_dot_01);
+	_verify(m_cross_01);
 
     return 0;
 }

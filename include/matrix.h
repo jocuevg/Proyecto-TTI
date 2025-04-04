@@ -49,4 +49,10 @@ Matrix& inv(Matrix &m);
 double norm(Matrix &m);
 double dot(Matrix &m,Matrix &n);
 Matrix & cross(Matrix &m,Matrix &n);
+Matrix & extract_vector(Matrix&m,const int n, const int k);
+Matrix & extract_row(Matrix&m,const int n);
+Matrix & extract_column(Matrix&m,const int n);
+Matrix & union_vector(Matrix&m,Matrix&k,const int n);
+Matrix & assign_column(Matrix&m,const int n);
+Matrix & assign_row(Matrix&m,const int n);
 #endif
