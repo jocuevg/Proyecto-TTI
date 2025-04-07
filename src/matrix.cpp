@@ -444,3 +444,37 @@ Matrix & cross(Matrix &m,Matrix &n)
     return *m_aux;
 
 }
+
+Matrix & extract_row(Matrix&m,const int n){
+	if (n <= 0 || n > m.n_row )
+	{
+		cout << "Matrix get: error in row/column\n";
+		exit(EXIT_FAILURE);
+	}
+
+	Matrix *m_aux = new Matrix(1, m.n_column);
+
+	for (int j = 1; j <= m.n_column; j++)
+	{
+		(*m_aux)(1, j) = m(n, j);
+	}
+
+	return (*m_aux);
+}
+
+Matrix & extract_column(Matrix&m,const int n){
+	if (n <= 0 || n > m.n_column )
+	{
+		cout << "Matrix get: error in row/column\n";
+		exit(EXIT_FAILURE);
+	}
+
+	Matrix *m_aux = new Matrix(1, m.n_row);
+
+	for (int j = 1; j <= m.n_row; j++)
+	{
+		(*m_aux)(1, j) = m(j, n);
+	}
+
+	return (*m_aux);
+}

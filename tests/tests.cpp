@@ -348,6 +348,44 @@ int m_cross_01() {
     return 0;
 }
 
+int m_extractRow_01() {
+    int f = 3;
+    int c = 4;
+	
+	Matrix A(f, c);
+	A(1,1) = 0; A(1,2) =  2; A(1,3) = 8; A(1,4) = 0;
+	A(2,1) = 1; A(2,2) = -1; A(2,3) = 0; A(2,4) = 0;
+	A(3,1) = 0; A(3,2) =  1; A(3,3) = 0; A(3,4) = 5;
+
+	Matrix B(c);
+	B(1,1) = 0; B(1,2) =  2; B(1,3) = 8; B(1,4) = 0;
+
+	Matrix R=extract_row(A,1);
+
+	_assert(m_equals(B, R, 1e-10));
+    
+    return 0;
+}
+
+int m_extractColumn_01() {
+    int f = 3;
+    int c = 4;
+	
+	Matrix A(f, c);
+	A(1,1) = 0; A(1,2) =  2; A(1,3) = 8; A(1,4) = 0;
+	A(2,1) = 1; A(2,2) = -1; A(2,3) = 0; A(2,4) = 0;
+	A(3,1) = 0; A(3,2) =  1; A(3,3) = 0; A(3,4) = 5;
+
+	Matrix B(f);
+	B(1,1) = 2; B(1,2) =  -1; B(1,3) = 1;
+
+	Matrix R=extract_column(A,2);
+
+	_assert(m_equals(B, R, 1e-10));
+    
+    return 0;
+}
+
 int all_tests()
 {
     _verify(m_sum_01);
@@ -366,6 +404,8 @@ int all_tests()
 	_verify(m_norm_01);
 	_verify(m_dot_01);
 	_verify(m_cross_01);
+	_verify(m_extractRow_01);
+	_verify(m_extractColumn_01);
 
     return 0;
 }
