@@ -1,3 +1,17 @@
+//$Source$
+//------------------------------------------------------------------------------
+// tests
+//------------------------------------------------------------------------------
+// Proyecto-TTI.
+//
+//
+/**@file tests.cpp
+* @brief Tests de funciones.
+*
+* @author Jose Cuevas Gil de Gomez
+* @bug No hay.
+*/
+//------------------------------------------------------------------------------
 #include "..\include\matrix.h"
 #include <cstdio>
 #include <cmath>
@@ -103,7 +117,6 @@ int m_zeros_02() {
     return 0;
 }
 
-
 int m_mul_01() {
     int f = 3;
     int c = 3;
@@ -125,6 +138,32 @@ int m_mul_01() {
 	
 	Matrix R = A * B;
     
+    _assert(m_equals(C, R, 1e-10));
+    
+    return 0;
+}
+
+int m_div_01() {
+    int f = 3;
+    int c = 3;
+	
+	Matrix A(f, c);
+	A(1,1) = 0; A(1,2) =  2; A(1,3) = 8;
+	A(2,1) = 1; A(2,2) = -1; A(2,3) = 0;
+	A(3,1) = 0; A(3,2) =  1; A(3,3) = 0; 
+	
+	Matrix B(f, c);
+	B(1,1) = 2; B(1,2) =  0; B(1,3) = 0; 
+	B(2,1) = 7; B(2,2) = -2; B(2,3) = 1; 
+	B(3,1) = 0; B(3,2) = -3; B(3,3) = 0; 
+	
+	Matrix C(f, c);
+	C(1,1) = -28; C(1,2) = 8; C(1,3) = -6; 
+	C(2,1) = 0.5; C(2,2) = 0; C(2,3) = 0.3333333333333333; 
+	C(3,1) = 0; C(3,2) = 0; C(3,3) = -0.3333333333333333; 
+	
+	Matrix R = A / B;
+
     _assert(m_equals(C, R, 1e-10));
     
     return 0;
@@ -348,6 +387,22 @@ int m_cross_01() {
     return 0;
 }
 
+int m_extractVector_01() {
+    int c = 4;
+	
+	Matrix A(c);
+	A(1,1) = 0; A(1,2) =  2; A(1,3) = 8; A(1,4) = 0;
+
+	Matrix B(2);
+	B(1,1) = 2; B(1,2) =  8; 
+
+	Matrix R=extract_vector(A,2,3);
+
+	_assert(m_equals(B, R, 1e-10));
+    
+    return 0;
+}
+
 int m_extractRow_01() {
     int f = 3;
     int c = 4;
@@ -386,6 +441,73 @@ int m_extractColumn_01() {
     return 0;
 }
 
+int m_unionVector_01() {
+    int c = 4;
+	
+	Matrix A(c);
+	A(1,1) = 0; A(1,2) =  2; A(1,3) = 8; A(1,4) = 0;
+
+	Matrix B(c);
+	B(1,1) = 0; B(1,2) =  2; B(1,3) = 8; B(1,4) = 0;
+
+	Matrix C(2*c);
+	C(1,1) = 0; C(1,2) =  2; C(1,3) = 8; C(1,4) = 0; C(1,5) = 0; C(1,6) =  2; C(1,7) = 8; C(1,8) = 0;
+
+	Matrix R=union_vector(A,B);
+
+	_assert(m_equals(C, R, 1e-10));
+    
+    return 0;
+}
+
+int m_assignRow_01() {
+	int f = 3;
+    int c = 3;
+
+    Matrix A(f, c);
+	A(1,1) = 0; A(1,2) =  2; A(1,3) = 8;
+	A(2,1) = 1; A(2,2) = -1; A(2,3) = 0;
+	A(3,1) = 0; A(3,2) =  1; A(3,3) = 0;
+
+	Matrix B(c);
+	B(1,1) = 99; B(1,2) =  100; B(1,3) = 101;
+
+	Matrix C(f,c);
+	C(1,1) = 99; C(1,2) =  100; C(1,3) = 101;
+	C(2,1) = 1; C(2,2) = -1; C(2,3) = 0;
+	C(3,1) = 0; C(3,2) =  1; C(3,3) = 0;
+
+	Matrix R=assign_row(A,B,1);
+
+	_assert(m_equals(C, R, 1e-10));
+    
+    return 0;
+}
+
+int m_assignColumn_01() {
+    int f = 3;
+    int c = 3;
+
+    Matrix A(f, c);
+	A(1,1) = 0; A(1,2) =  2; A(1,3) = 8;
+	A(2,1) = 1; A(2,2) = -1; A(2,3) = 0;
+	A(3,1) = 0; A(3,2) =  1; A(3,3) = 0;
+
+	Matrix B(c);
+	B(1,1) = 99; B(1,2) =  100; B(1,3) = 101;
+
+	Matrix C(f,c);
+	C(1,1) = 0; C(1,2) =  99; C(1,3) = 8;
+	C(2,1) = 1; C(2,2) = 100; C(2,3) = 0;
+	C(3,1) = 0; C(3,2) = 101; C(3,3) = 0;
+
+	Matrix R=assign_column(A,B,2);
+
+	_assert(m_equals(C, R, 1e-10));
+    
+    return 0;
+}
+
 int all_tests()
 {
     _verify(m_sum_01);
@@ -393,6 +515,7 @@ int all_tests()
     _verify(m_zeros_01);
     _verify(m_zeros_02);
 	_verify(m_mul_01);
+	_verify(m_div_01);
 	_verify(m_eq_01);
 	_verify(m_eye_01);
 	_verify(m_trans_01);
@@ -404,8 +527,12 @@ int all_tests()
 	_verify(m_norm_01);
 	_verify(m_dot_01);
 	_verify(m_cross_01);
+	_verify(m_extractVector_01);
 	_verify(m_extractRow_01);
 	_verify(m_extractColumn_01);
+	_verify(m_unionVector_01);
+	_verify(m_assignRow_01);
+	_verify(m_assignColumn_01);
 
     return 0;
 }

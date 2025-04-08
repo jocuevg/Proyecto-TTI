@@ -1,3 +1,17 @@
+//$Source$
+//------------------------------------------------------------------------------
+// matrix
+//------------------------------------------------------------------------------
+// Proyecto-TTI.
+//
+//
+/**@file matrix.cpp
+* @brief Programacion de operaciones de matrices.
+*
+* @author Jose Cuevas Gil de Gomez
+* @bug No hay.
+*/
+//------------------------------------------------------------------------------
 #include "..\include\matrix.h"
 
 Matrix::Matrix(const int n_row, const int n_column)
@@ -42,9 +56,7 @@ Matrix::Matrix(const int v_size)
 		exit(EXIT_FAILURE);
 	}
 
-
 	this->data[0] = (double *)calloc(v_size, sizeof(double));
-
 }
 
 double &Matrix::operator()(const int row, const int column)
@@ -60,13 +72,13 @@ double &Matrix::operator()(const int row, const int column)
 
 double &Matrix::operator()(const int n)
 {
-	if (n <= 0 || n > this->n_row*this->n_column)
+	if (n <= 0 || n > this->n_row * this->n_column)
 	{
 		cout << "Vector get: error in row/column\n";
 		exit(EXIT_FAILURE);
 	}
 
-	return this->data[(n - 1)/this->n_column][(n - 1)%this->n_column];
+	return this->data[(n - 1) / this->n_column][(n - 1) % this->n_column];
 }
 
 Matrix &Matrix::operator+(Matrix &m)
@@ -371,7 +383,7 @@ Matrix &Matrix::operator*(const double x)
 
 Matrix &Matrix::operator/(const double x)
 {
-	if (x==0)
+	if (x == 0)
 	{
 		cout << "Matrix div: error in x is zero\n";
 		exit(EXIT_FAILURE);
@@ -398,38 +410,38 @@ double norm(Matrix &m)
 		cout << "Matrix inversion error: Matrix is not square\n";
 		exit(EXIT_FAILURE);
 	}
-	double res=0;
+	double res = 0;
 
 	for (int i = 1; i <= m.n_column; i++)
 	{
-		res += pow(m(1, i),2);
+		res += pow(m(1, i), 2);
 	}
 
 	return sqrt(res);
 }
 
-double dot(Matrix &m,Matrix &n)
+double dot(Matrix &m, Matrix &n)
 {
 
-	if (m.n_row != 1 || n.n_row!=1 || m.n_column!=n.n_column)
+	if (m.n_row != 1 || n.n_row != 1 || m.n_column != n.n_column)
 	{
 		cout << "Matrix inversion error: Matrix is not square\n";
 		exit(EXIT_FAILURE);
 	}
-	double res=0;
+	double res = 0;
 
 	for (int i = 1; i <= m.n_column; i++)
 	{
-		res += m(1, i)*n(1,i);
+		res += m(1, i) * n(1, i);
 	}
 
 	return res;
 }
 
-Matrix & cross(Matrix &m,Matrix &n)
+Matrix &cross(Matrix &m, Matrix &n)
 {
 
-	if (m.n_row != 1 || n.n_row!=1 || m.n_column!=n.n_column || m.n_column!=3)
+	if (m.n_row != 1 || n.n_row != 1 || m.n_column != n.n_column || m.n_column != 3)
 	{
 		cout << "Matrix inversion error: Matrix is not square\n";
 		exit(EXIT_FAILURE);
@@ -437,16 +449,35 @@ Matrix & cross(Matrix &m,Matrix &n)
 
 	Matrix *m_aux = new Matrix(3);
 
-	(*m_aux)(1, 1) = m(1, 2) * n(1, 3) - m(1, 3) * n(1, 2);  
-    (*m_aux)(1, 2) = m(1, 3) * n(1, 1) - m(1, 1) * n(1, 3);  
-    (*m_aux)(1, 3) = m(1, 1) * n(1, 2) - m(1, 2) * n(1, 1);  
+	(*m_aux)(1, 1) = m(1, 2) * n(1, 3) - m(1, 3) * n(1, 2);
+	(*m_aux)(1, 2) = m(1, 3) * n(1, 1) - m(1, 1) * n(1, 3);
+	(*m_aux)(1, 3) = m(1, 1) * n(1, 2) - m(1, 2) * n(1, 1);
 
-    return *m_aux;
-
+	return *m_aux;
 }
 
-Matrix & extract_row(Matrix&m,const int n){
-	if (n <= 0 || n > m.n_row )
+Matrix &extract_vector(Matrix &m, const int n, const int k)
+{
+
+	if (m.n_row != 1 || n <= 0 || k < n || k > m.n_column)
+	{
+		cout << "Vector extract: error in indexes\n";
+		exit(EXIT_FAILURE);
+	}
+
+	Matrix *m_aux = new Matrix(k - n + 1);
+
+	for (int i = n; i <= k; i++)
+	{
+		(*m_aux)(i - n + 1) = m(i);
+	}
+
+	return *m_aux;
+}
+
+Matrix &extract_row(Matrix &m, const int n)
+{
+	if (n <= 0 || n > m.n_row)
 	{
 		cout << "Matrix get: error in row/column\n";
 		exit(EXIT_FAILURE);
@@ -462,8 +493,9 @@ Matrix & extract_row(Matrix&m,const int n){
 	return (*m_aux);
 }
 
-Matrix & extract_column(Matrix&m,const int n){
-	if (n <= 0 || n > m.n_column )
+Matrix &extract_column(Matrix &m, const int n)
+{
+	if (n <= 0 || n > m.n_column)
 	{
 		cout << "Matrix get: error in row/column\n";
 		exit(EXIT_FAILURE);
@@ -477,4 +509,58 @@ Matrix & extract_column(Matrix&m,const int n){
 	}
 
 	return (*m_aux);
+}
+
+Matrix &union_vector(Matrix &m, Matrix &k)
+{
+	if (m.n_row != 1 || k.n_row != 1)
+	{
+		cout << "Vector union: error in vector\n";
+		exit(EXIT_FAILURE);
+	}
+
+	int t=m.n_column + k.n_column;
+
+	Matrix *m_aux = new Matrix(t);
+
+	for (int i = 1; i <= m.n_column; i++)
+	{
+		(*m_aux)(i) = m(i);
+	}
+	for (int i = 1; i <= k.n_column; i++)
+	{
+		(*m_aux)(i+m.n_column) = k(i);
+	}
+
+	return *m_aux;
+}
+
+Matrix & assign_column(Matrix&m,Matrix&k, const int n){
+	if (k.n_row != 1 || k.n_column != m.n_row || n<=0 || n>m.n_column)
+	{
+		cout << "Assign column: error in vector/index\n";
+		exit(EXIT_FAILURE);
+	}
+
+	for (int i = 1; i <= m.n_row; i++)
+	{
+		m(i,n)=k(i);
+	}
+
+	return m;
+}
+
+Matrix & assign_row(Matrix&m,Matrix&k,const int n){
+	if (k.n_row != 1 || k.n_column != m.n_column || n<=0 || n>m.n_row)
+	{
+		cout << "Assign column: error in vector/index\n";
+		exit(EXIT_FAILURE);
+	}
+
+	for (int i = 1; i <= m.n_column; i++)
+	{
+		m(n,i)=k(i);
+	}
+
+	return m;
 }
