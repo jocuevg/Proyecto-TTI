@@ -12,7 +12,11 @@
 * @bug No hay.
 */
 //------------------------------------------------------------------------------
-#include "..\include\matrix.h"
+#include "..\include\matrix.hpp"
+#include "..\include\R_x.hpp"
+#include "..\include\R_y.hpp"
+#include "..\include\R_z.hpp"
+#include "..\include\AccelPointMass.hpp"
 #include <cstdio>
 #include <cmath>
 
@@ -508,6 +512,74 @@ int m_assignColumn_01() {
     return 0;
 }
 
+int R_x_01() {
+    int f = 3;
+    int c = 3;
+
+    Matrix A(f, c);
+	A(1,1) = 1; A(1,2) =  0; A(1,3) = 0;
+	A(2,1) = 0; A(2,2) = -0.989992496600445; A(2,3) = 0.141120008059867;
+	A(3,1) = 0; A(3,2) =  -0.141120008059867; A(3,3) = -0.989992496600445;
+
+	Matrix R=R_x(3);
+
+	_assert(m_equals(A, R, 1e-10));
+    
+    return 0;
+}
+
+int R_y_01() {
+    int f = 3;
+    int c = 3;
+
+    Matrix A(f, c);
+	A(1,1) = -0.989992496600445; A(1,2) =  0; A(1,3) = -0.141120008059867;
+	A(2,1) = 0; A(2,2) = 1; A(2,3) = 0;
+	A(3,1) = 0.141120008059867; A(3,2) =  0; A(3,3) = -0.989992496600445;
+
+	Matrix R=R_y(3);
+
+	_assert(m_equals(A, R, 1e-10));
+    
+    return 0;
+}
+
+int R_z_01() {
+    int f = 3;
+    int c = 3;
+
+    Matrix A(f, c);
+	A(1,1) = -0.989992496600445; A(1,2) =  0.141120008059867; A(1,3) = 0;
+	A(2,1) = -0.141120008059867; A(2,2) = -0.989992496600445; A(2,3) = 0;
+	A(3,1) = 0; A(3,2) =  0; A(3,3) = 1;
+
+	Matrix R=R_z(3);
+
+	_assert(m_equals(A, R, 1e-10));
+    
+    return 0;
+}
+
+int AccelPointMass_01() {
+    int f = 3;
+    int c = 3;
+	
+	Matrix A(f);
+	A(1,1) = 1; A(1,2) =  2; A(1,3) = 3; 
+	
+	Matrix B(f);
+	B(1,1) = 4; B(1,2) =  5; B(1,3) = 6;
+	
+	Matrix C(f);
+	C(1,1) = 0.0463899400720928; C(1,2) =  0.0419499176126264; C(1,3) = 0.0375098951531599; 
+	
+	Matrix R = AccelPointMass(A,B,3);
+    
+    _assert(m_equals(C, R, 1e-10));
+    
+    return 0;
+}
+
 int all_tests()
 {
     _verify(m_sum_01);
@@ -533,6 +605,10 @@ int all_tests()
 	_verify(m_unionVector_01);
 	_verify(m_assignRow_01);
 	_verify(m_assignColumn_01);
+	_verify(R_x_01);
+	_verify(R_y_01);
+	_verify(R_z_01);
+	_verify(AccelPointMass_01);
 
     return 0;
 }

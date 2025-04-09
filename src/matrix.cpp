@@ -12,7 +12,7 @@
 * @bug No hay.
 */
 //------------------------------------------------------------------------------
-#include "..\include\matrix.h"
+#include "..\include\matrix.hpp"
 
 Matrix::Matrix(const int n_row, const int n_column)
 {
