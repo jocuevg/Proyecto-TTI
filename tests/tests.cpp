@@ -17,6 +17,16 @@
 #include "..\include\R_y.hpp"
 #include "..\include\R_z.hpp"
 #include "..\include\AccelPointMass.hpp"
+#include "..\include\Cheb3D.hpp"
+#include "..\include\EccAnom.hpp"
+#include "..\include\Frac.hpp"
+#include "..\include\MeanObliquity.hpp"
+#include "..\include\Mjday.hpp"
+#include "..\include\Mjday_TDB.hpp"
+#include "..\include\Position.hpp"
+#include "..\include\sign_.hpp"
+#include "..\include\timediff.hpp"
+#include "..\include\AzElPa.hpp"
 #include <cstdio>
 #include <cmath>
 
@@ -38,6 +48,18 @@ int m_equals(Matrix A, Matrix B, double p) {
 				}
 	
 	return 1;
+}
+
+bool compareTuplesAzElPa(const tuple<double, double, Matrix, Matrix> t1, const tuple<double, double, Matrix, Matrix> t2, double p) {
+	if(fabs(get<0>(t1)-get<0>(t2)) > p) {
+		printf("%2.20lf %2.20lf\n",get<0>(t1),get<0>(t2));
+		return 0;
+	}
+	if(fabs(get<1>(t1)-get<1>(t2)) > p) {
+		printf("%2.20lf %2.20lf\n",get<1>(t1),get<1>(t2));
+		return 0;
+	}
+    return m_equals(get<2>(t1), get<2>(t2),p) && m_equals(get<3>(t1), get<3>(t2),p);
 }
 
 int m_sum_01() {
@@ -580,6 +602,120 @@ int AccelPointMass_01() {
     return 0;
 }
 
+int Cheb3D_01() {
+    int f = 3;
+	
+	Matrix A(f);
+	A(1,1) = 1; A(1,2) =  2; A(1,3) = 3; 
+	
+	Matrix B(f);
+	B(1,1) = 4; B(1,2) =  5; B(1,3) = 6;
+	
+	Matrix C(f);
+	C(1,1) = 7; C(1,2) =  8; C(1,3) = 9; 
+
+	Matrix D(f);
+	D(1,1) = -2; D(1,2) =  -2; D(1,3) = -2; 
+	
+	Matrix R = Cheb3D(5,3,0,10,A,B,C);
+    
+    _assert(m_equals(D, R, 1e-10));
+    
+    return 0;
+}
+
+int EccAnom_01() {
+
+    _assert(abs(2.3542427582227807 - EccAnom(2,0.5)) < 1e-10);
+    
+    return 0;
+}
+
+int Frac_01() {
+
+    _assert(Frac(2.5)==0.5);
+    
+    return 0;
+}
+
+int MeanObliquity_01() {
+
+    _assert(abs(0.4094130391 - MeanObliquity(5)) < 1e-10);
+    
+    return 0;
+}
+
+int Mjday_01(){
+
+	_assert(abs(52347.4989583333 - Mjday(2002,3,14,11,58,30)) < 1e-10);
+    
+    return 0;
+}
+
+int Mjday_02(){
+
+	_assert(52347 == Mjday(2002,3,14));
+    
+    return 0;
+}
+
+int MjdayTDB_01(){
+
+	_assert(abs(52347.4989583509 - Mjday_TDB(52347.4989583333)) < 1e-10);
+    
+    return 0;
+}
+
+int Position_01(){
+
+	Matrix A(3);
+	A(1)=219206.03794572583; 
+	A(2)=-5500435.17490942962; 
+	A(3)=-3210856.76539639011;
+
+	Matrix R= Position(99,100,101);
+
+	_assert(m_equals(A, R, 1e-10));
+    
+    return 0;
+}
+
+int sign_01(){
+
+	_assert(-8.5==sign_(8.5,-1));
+    
+    return 0;
+}
+
+int timediff_01(){
+
+	tuple<double,double,double,double,double> A = timediff(5,10);
+	
+	tuple<double,double,double,double,double> B = make_tuple(-5,9,14,42.184,9);
+	
+	_assert(A==B);
+
+	return 0;
+}
+
+int AzElPa_01(){
+
+	Matrix A(3);
+	A(1)=1;A(2)=1;A(3)=1;
+	tuple<double,double,Matrix,Matrix> R = AzElPa(A);
+	
+	Matrix B(3);
+	B(1)=0.5;B(2)=-0.5;B(3)=0;
+	Matrix C(3);
+	C(1)=-0.23570226039;C(2)=-0.23570226039;C(3)=0.47140452079;
+
+	tuple<double,double,Matrix,Matrix> D = make_tuple(0.78539816339,0.61547970867,B,C);
+	
+	_assert(compareTuplesAzElPa(R,D,1e-10));
+
+	return 0;
+}
+
 int all_tests()
 {
     _verify(m_sum_01);
@@ -609,6 +745,16 @@ int all_tests()
 	_verify(R_y_01);
 	_verify(R_z_01);
 	_verify(AccelPointMass_01);
+	_verify(Cheb3D_01);
+	_verify(EccAnom_01);
+	_verify(Frac_01);
+	_verify(MeanObliquity_01);
+	_verify(Mjday_01);
+	_verify(Mjday_02);
+	_verify(MjdayTDB_01);
+	_verify(Position_01);
+	_verify(sign_01);
+	_verify(AzElPa_01);
 
     return 0;
 }

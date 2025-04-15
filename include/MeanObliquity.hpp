@@ -1,35 +1,33 @@
 //$Header$
 //------------------------------------------------------------------------------
-// AccelPointMass
+// MeanObliquity
 //------------------------------------------------------------------------------
 // Proyecto-TTI.
 //
 //
-/**@file AccelPointMass.hpp
- * @brief Archivo cabecera de operacion AccelPointMass.
+/**@file MeanObliquity.hpp
+ * @brief Archivo cabecera de operacion MeanObliquity.
  *
  * @author Jose Cuevas Gil de Gomez
  * @bug No hay.
  */
 //------------------------------------------------------------------------------
-#ifndef _AccelPointMass_
-#define _AccelPointMass_
+#ifndef _MeanObliquity_
+#define _MeanObliquity_
 
 #include <cmath>
 #include "matrix.hpp"
 
 //------------------------------------------------------------------------------
-// Matrix AccelPointMass(Matrix r, Matrix s,double GM)
+// double MeanObliquity(double Mjd_TT)
 //------------------------------------------------------------------------------
 /**
- * @brief Operacion AccelPointMass.
+ * @brief Operacion MeanObliquity.
  *
- * @param [in] r Vector posicion del satelite.
- * @param [in] s Vector posicion del punto de masa.
- * @param [in] GM Coeficiente gravitacional de la masa.
- * @return Aceleracion.
+ * @param [in] Mjd_TT Fecha juliana modificada(Tiempo terrestre).  
+ * @return Oblicuidad media de la eclíptica [rad].
  */
 //------------------------------------------------------------------------------
-Matrix AccelPointMass(Matrix r, Matrix s,double GM);
+double MeanObliquity(double Mjd_TT);
 
 #endif

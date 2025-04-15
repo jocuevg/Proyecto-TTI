@@ -12,22 +12,26 @@
  * @bug No hay.
  */
 //------------------------------------------------------------------------------
-#ifndef _AccelPointMass_
-#define _AccelPointMass_
+#ifndef _Cheb3D_
+#define _Cheb3D_
 
 #include <cmath>
 #include "matrix.hpp"
 
 //------------------------------------------------------------------------------
-// double AccelPointMass(Matrix r, Matrix s,double GM)
+// Matrix & Cheb3D(double t,double N,double Ta,double Tb,Matrix & Cx,Matrix& Cy,Matrix& Cz)
 //------------------------------------------------------------------------------
 /**
- * @brief Operacion AccelPointMass.
+ * @brief Operacion Cheb3D.
  *
- * @param [in] r Satellite position vector.
- * @param [in] s Point mass position vector.
- * @param [in] GM Gravitational coefficient of point mass.
- * @return aceleracion.
+ * @param [in] t Tiempo.
+ * @param [in] N Numero de coeficiente.
+ * @param [in] Ta Inicio del intervalo.
+ * @param [in] Tb Final del intervale.
+ * @param [in] Cx Coeficientes del polimonio de Chebyshev (coordenada x).
+ * @param [in] Cy Coeficientes del polimonio de Chebyshev (coordenada y).
+ * @param [in] Cz Coeficientes del polimonio de Chebyshev (coordenada z).
+ * @return Aproximación de Chebyshev de vectores de 3 dimensiones.
  */
 //------------------------------------------------------------------------------
  Matrix Cheb3D(double t,double N,double Ta,double Tb,Matrix Cx,Matrix Cy,Matrix Cz);

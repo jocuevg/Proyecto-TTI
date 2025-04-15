@@ -1,35 +1,35 @@
 //$Header$
 //------------------------------------------------------------------------------
-// AccelPointMass
+// timediff
 //------------------------------------------------------------------------------
 // Proyecto-TTI.
 //
 //
-/**@file AccelPointMass.hpp
- * @brief Archivo cabecera de operacion AccelPointMass.
+/**@file timediff.hpp
+ * @brief Archivo cabecera de operacion timediff.
  *
  * @author Jose Cuevas Gil de Gomez
  * @bug No hay.
  */
 //------------------------------------------------------------------------------
-#ifndef _AccelPointMass_
-#define _AccelPointMass_
+#ifndef _timediff_
+#define _timediff_
 
 #include <cmath>
-#include "matrix.hpp"
+#include <tuple>
+using namespace std;
 
 //------------------------------------------------------------------------------
-// Matrix AccelPointMass(Matrix r, Matrix s,double GM)
+// tuple<double,double,double,double,double> timediff (double UT1_UTC, double TAI_UTC)
 //------------------------------------------------------------------------------
 /**
- * @brief Operacion AccelPointMass.
+ * @brief Operacion timediff.
  *
- * @param [in] r Vector posicion del satelite.
- * @param [in] s Vector posicion del punto de masa.
- * @param [in] GM Coeficiente gravitacional de la masa.
- * @return Aceleracion.
+ * @param [in] UT1_UTC Primer tiempo. 
+ * @param [in] TAI_UTC Segundo tiempo.  
+ * @return Diferencias de tiempo.
  */
 //------------------------------------------------------------------------------
-Matrix AccelPointMass(Matrix r, Matrix s,double GM);
+tuple<double,double,double,double,double> timediff (double UT1_UTC, double TAI_UTC);
 
 #endif

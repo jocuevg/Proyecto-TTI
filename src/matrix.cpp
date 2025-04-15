@@ -189,14 +189,8 @@ Matrix &Matrix::operator*(Matrix &m)
 
 Matrix &Matrix::operator=(Matrix &m)
 {
-	if (this == &m)
-		return *this;
-
-	if (this->n_row != m.n_row || this->n_column != m.n_column)
-	{
-		cout << "Matrix sub: error in n_row/n_column\n";
-		exit(EXIT_FAILURE);
-	}
+	this->n_row=m.n_row;
+	this->n_column=m.n_column;
 
 	for (int i = 1; i <= this->n_row; i++)
 	{

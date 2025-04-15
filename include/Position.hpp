@@ -1,35 +1,35 @@
 //$Header$
 //------------------------------------------------------------------------------
-// AccelPointMass
+// Position
 //------------------------------------------------------------------------------
 // Proyecto-TTI.
 //
 //
-/**@file AccelPointMass.hpp
- * @brief Archivo cabecera de operacion AccelPointMass.
+/**@file Position.hpp
+ * @brief Archivo cabecera de operacion Position.
  *
  * @author Jose Cuevas Gil de Gomez
  * @bug No hay.
  */
 //------------------------------------------------------------------------------
-#ifndef _AccelPointMass_
-#define _AccelPointMass_
+#ifndef _Position_
+#define _Position_
 
 #include <cmath>
 #include "matrix.hpp"
 
 //------------------------------------------------------------------------------
-// Matrix AccelPointMass(Matrix r, Matrix s,double GM)
+// double Position(double lon,double lat,double h)
 //------------------------------------------------------------------------------
 /**
- * @brief Operacion AccelPointMass.
+ * @brief Operacion Position.
  *
- * @param [in] r Vector posicion del satelite.
- * @param [in] s Vector posicion del punto de masa.
- * @param [in] GM Coeficiente gravitacional de la masa.
- * @return Aceleracion.
+ * @param [in] lon Longitud en radianes.   
+ * @param [in] lan Latitud en radianes.   
+ * @param [in] h Altura en metros.   
+ * @return Vector posicion.
  */
 //------------------------------------------------------------------------------
-Matrix AccelPointMass(Matrix r, Matrix s,double GM);
+Matrix Position(double lon,double lat,double h);
 
 #endif

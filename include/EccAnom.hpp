@@ -1,35 +1,34 @@
 //$Header$
 //------------------------------------------------------------------------------
-// AccelPointMass
+// EccAnom
 //------------------------------------------------------------------------------
 // Proyecto-TTI.
 //
 //
-/**@file AccelPointMass.hpp
- * @brief Archivo cabecera de operacion AccelPointMass.
+/**@file EccAnom.hpp
+ * @brief Archivo cabecera de operacion EccAnom.
  *
  * @author Jose Cuevas Gil de Gomez
  * @bug No hay.
  */
 //------------------------------------------------------------------------------
-#ifndef _AccelPointMass_
-#define _AccelPointMass_
+#ifndef _EccAnom_
+#define _EccAnom_
 
 #include <cmath>
 #include "matrix.hpp"
 
 //------------------------------------------------------------------------------
-// Matrix AccelPointMass(Matrix r, Matrix s,double GM)
+// double EccAnom (double M, double e)
 //------------------------------------------------------------------------------
 /**
- * @brief Operacion AccelPointMass.
+ * @brief Operacion EccAnom.
  *
- * @param [in] r Vector posicion del satelite.
- * @param [in] s Vector posicion del punto de masa.
- * @param [in] GM Coeficiente gravitacional de la masa.
- * @return Aceleracion.
+ * @param [in] M Anomalía media en radianes.  
+ * @param [in] E Excentricidad de la órbita [0,1].
+ * @return Anomalía excéntrica en radianes.
  */
 //------------------------------------------------------------------------------
-Matrix AccelPointMass(Matrix r, Matrix s,double GM);
+double EccAnom (double M, double e);
 
 #endif

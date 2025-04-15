@@ -1,35 +1,35 @@
 //$Header$
 //------------------------------------------------------------------------------
-// AccelPointMass
+// AzElPa
 //------------------------------------------------------------------------------
 // Proyecto-TTI.
 //
 //
-/**@file AccelPointMass.hpp
- * @brief Archivo cabecera de operacion AccelPointMass.
+/**@file AzElPa.hpp
+ * @brief Archivo cabecera de operacion AzElPa.
  *
  * @author Jose Cuevas Gil de Gomez
  * @bug No hay.
  */
 //------------------------------------------------------------------------------
-#ifndef _AccelPointMass_
-#define _AccelPointMass_
+#ifndef _AzElPa_
+#define _AzElPa_
 
 #include <cmath>
+#include <tuple>
 #include "matrix.hpp"
+using namespace std;
 
 //------------------------------------------------------------------------------
-// Matrix AccelPointMass(Matrix r, Matrix s,double GM)
+// tuple<double,double,Matrix,Matrix> AzElPa (Matrix s)
 //------------------------------------------------------------------------------
 /**
- * @brief Operacion AccelPointMass.
+ * @brief Operacion AzElPa.
  *
- * @param [in] r Vector posicion del satelite.
- * @param [in] s Vector posicion del punto de masa.
- * @param [in] GM Coeficiente gravitacional de la masa.
- * @return Aceleracion.
+ * @param [in] s Coordenadas de la tangente local topocéntrica. 
+ * @return Acimut [rad], Elevación [rad], Parciales de acimut con respecto a s , y Parciales de elevación con respecto a s.
  */
 //------------------------------------------------------------------------------
-Matrix AccelPointMass(Matrix r, Matrix s,double GM);
+tuple<double,double,Matrix,Matrix> AzElPa (Matrix s);
 
 #endif

@@ -12,7 +12,8 @@
             ],
             "compilerPath": "C:/w64devkit/bin/g++.exe",
             "cStandard": "c17",
-            "intelliSenseMode": "windows-msvc-x64"
+            "intelliSenseMode": "windows-gcc-x64",
+            "cppStandard": "c++23"
         }
     ],
     "version": 4
