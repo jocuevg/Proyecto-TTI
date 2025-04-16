@@ -1,0 +1,17 @@
+<map id="transpose" name="transpose">
+<area shape="rect" id="Node000001" title="Calcula la transpuesta de una matriz." alt="" coords="523,31,601,56"/>
+<area shape="rect" id="Node000002" href="$tests_8cpp.html#ac7cc59ab22fac9871db824521a98b61d" title=" " alt="" coords="384,5,473,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="507,36,473,29,474,24,508,31"/>
+<area shape="rect" id="Node000005" href="$TimeUpdate_8cpp.html#a260b9a0c00cae3cf8fbf1276bb09b7e0" title="Operacion TimeUpdate." alt="" coords="382,55,475,80"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="508,56,475,62,474,57,507,51"/>
+<area shape="rect" id="Node000003" href="$tests_8cpp.html#a438723717e25f3ab29c50c261ed54996" title=" " alt="" coords="103,55,173,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="369,25,298,32,222,45,174,58,173,53,220,40,297,27,368,19"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,55,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="87,70,55,70,55,65,87,65"/>
+<area shape="rect" id="Node000006" href="$tests_8cpp.html#a16c2088e5f4b2a17cb0723da7a688747" title=" " alt="" coords="221,55,334,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="367,70,335,70,335,65,367,65"/>
+<area shape="rect" id="Node000007" href="$tests_8cpp.html#af2f37b9da1af81ec1315e81f7292def3" title=" " alt="" coords="221,104,334,130"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="373,88,320,106,319,101,372,83"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="205,70,174,70,174,65,205,65"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="224,101,172,82,174,77,226,96"/>
+</map>

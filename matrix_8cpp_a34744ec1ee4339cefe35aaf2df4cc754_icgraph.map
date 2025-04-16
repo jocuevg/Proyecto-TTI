@@ -1,0 +1,9 @@
+<map id="extract_row" name="extract_row">
+<area shape="rect" id="Node000001" title="Extrae la fila n de la matriz." alt="" coords="394,5,483,31"/>
+<area shape="rect" id="Node000002" href="$tests_8cpp.html#a2e672339642809e9fd6affa6b488d7ef" title=" " alt="" coords="221,5,346,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="379,21,346,21,346,16,379,16"/>
+<area shape="rect" id="Node000003" href="$tests_8cpp.html#a438723717e25f3ab29c50c261ed54996" title=" " alt="" coords="103,5,173,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="205,21,174,21,174,16,205,16"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
