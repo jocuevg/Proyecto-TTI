@@ -473,7 +473,7 @@ Matrix &extract_row(Matrix &m, const int n)
 {
 	if (n <= 0 || n > m.n_row)
 	{
-		cout << "Matrix get: error in row/column\n";
+		cout << "Matrix get: error in row\n";
 		exit(EXIT_FAILURE);
 	}
 
@@ -491,7 +491,7 @@ Matrix &extract_column(Matrix &m, const int n)
 {
 	if (n <= 0 || n > m.n_column)
 	{
-		cout << "Matrix get: error in row/column\n";
+		cout << "Matrix get: error in column\n";
 		exit(EXIT_FAILURE);
 	}
 

@@ -16,6 +16,7 @@
 #include "..\include\R_x.hpp"
 #include "..\include\R_y.hpp"
 #include "..\include\R_z.hpp"
+#include "..\include\Sat_const.hpp"
 #include "..\include\AccelPointMass.hpp"
 #include "..\include\Cheb3D.hpp"
 #include "..\include\EccAnom.hpp"
@@ -27,8 +28,13 @@
 #include "..\include\sign_.hpp"
 #include "..\include\timediff.hpp"
 #include "..\include\AzElPa.hpp"
+#include "..\include\IERS.hpp"
+#include "..\include\Legendre.hpp"
+#include "..\include\NutAngles.hpp"
+#include "..\include\TimeUpdate.hpp"
 #include <cstdio>
 #include <cmath>
+#include <iomanip>
 
 int tests_run = 0;
 
@@ -60,6 +66,50 @@ bool compareTuplesAzElPa(const tuple<double, double, Matrix, Matrix> t1, const t
 		return 0;
 	}
     return m_equals(get<2>(t1), get<2>(t2),p) && m_equals(get<3>(t1), get<3>(t2),p);
+}
+
+bool compareTuplesIERS(tuple<double, double, double, double, double, double, double, double, double> t1, 
+		tuple<double, double, double, double, double, double, double, double, double> t2, 
+		double p) {
+
+	if(fabs(get<0>(t1)-get<0>(t2)) > p) {
+		printf("%2.20lf %2.20lf\n",get<0>(t1),get<0>(t2));
+		return 0;
+	}
+	if(fabs(get<1>(t1)-get<1>(t2)) > p) {
+		printf("%2.20lf %2.20lf\n",get<1>(t1),get<1>(t2));
+		return 0;
+	}
+	if(fabs(get<2>(t1)-get<2>(t2)) > p) {
+		printf("%2.20lf %2.20lf\n",get<2>(t1),get<2>(t2));
+		return 0;
+	}
+	if(fabs(get<3>(t1)-get<3>(t2)) > p) {
+		printf("%2.20lf %2.20lf\n",get<3>(t1),get<3>(t2));
+		return 0;
+	}
+	if(fabs(get<4>(t1)-get<4>(t2)) > p) {
+		printf("%2.20lf %2.20lf\n",get<4>(t1),get<4>(t2));
+		return 0;
+	}
+	if(fabs(get<5>(t1)-get<5>(t2)) > p) {
+		printf("%2.20lf %2.20lf\n",get<5>(t1),get<5>(t2));
+		return 0;
+	}
+	if(fabs(get<6>(t1)-get<6>(t2)) > p) {
+		printf("%2.20lf %2.20lf\n",get<6>(t1),get<6>(t2));
+		return 0;
+	}
+	if(fabs(get<7>(t1)-get<7>(t2)) > p) {
+		printf("%2.20lf %2.20lf\n",get<7>(t1),get<7>(t2));
+		return 0;
+	}
+	if(fabs(get<8>(t1)-get<8>(t2)) > p) {
+		printf("%2.20lf %2.20lf\n",get<8>(t1),get<8>(t2));
+		return 0;
+	}
+	
+	return 1;
 }
 
 int m_sum_01() {
@@ -626,7 +676,7 @@ int Cheb3D_01() {
 
 int EccAnom_01() {
 
-    _assert(abs(2.3542427582227807 - EccAnom(2,0.5)) < 1e-10);
+    _assert(fabs(2.3542427582227807 - EccAnom(2,0.5)) < 1e-10);
     
     return 0;
 }
@@ -640,14 +690,14 @@ int Frac_01() {
 
 int MeanObliquity_01() {
 
-    _assert(abs(0.4094130391 - MeanObliquity(5)) < 1e-10);
+    _assert(fabs(0.4094130391 - MeanObliquity(5)) < 1e-10);
     
     return 0;
 }
 
 int Mjday_01(){
 
-	_assert(abs(52347.4989583333 - Mjday(2002,3,14,11,58,30)) < 1e-10);
+	_assert(fabs(52347.4989583333 - Mjday(2002,3,14,11,58,30)) < 1e-10);
     
     return 0;
 }
@@ -661,7 +711,7 @@ int Mjday_02(){
 
 int MjdayTDB_01(){
 
-	_assert(abs(52347.4989583509 - Mjday_TDB(52347.4989583333)) < 1e-10);
+	_assert(fabs(52347.4989583509 - Mjday_TDB(52347.4989583333)) < 1e-10);
     
     return 0;
 }
@@ -716,6 +766,138 @@ int AzElPa_01(){
 	return 0;
 }
 
+int IERS_01(){
+
+	Matrix A(13,2);
+	A(1,1)=1;A(1,2)=2;
+	A(2,1)=3;A(2,2)=4;
+	A(3,1)=5;A(3,2)=6;
+	A(4,1)=7;A(4,2)=8;
+	A(5,1)=9;A(5,2)=10;
+	A(6,1)=11;A(6,2)=12;
+	A(7,1)=13;A(7,2)=14;
+	A(8,1)=15;A(8,2)=16;
+	A(9,1)=17;A(9,2)=17;
+	A(10,1)=19;A(10,2)=20;
+	A(11,1)=21;A(11,2)=22;
+	A(12,1)=23;A(12,2)=24;
+	A(13,1)=25;A(13,2)=26;
+
+	tuple<double, double, double, double, double, double, double, double, double> R = IERS(A,7,'l');
+
+	tuple<double, double, double, double, double, double, double, double, double> D = make_tuple(0.000043633,0.000053330,13,15,0.000082418,0.000092115,0.00010181,0.00011151,25);
+
+	_assert(compareTuplesIERS(R,D,1e-8));
+
+	return 0;
+}
+
+int IERS_02(){
+
+	Matrix A(13,2);
+	A(1,1)=1;A(1,2)=2;
+	A(2,1)=3;A(2,2)=4;
+	A(3,1)=5;A(3,2)=6;
+	A(4,1)=7;A(4,2)=8;
+	A(5,1)=9;A(5,2)=10;
+	A(6,1)=11;A(6,2)=12;
+	A(7,1)=13;A(7,2)=14;
+	A(8,1)=15;A(8,2)=16;
+	A(9,1)=17;A(9,2)=17;
+	A(10,1)=19;A(10,2)=20;
+	A(11,1)=21;A(11,2)=22;
+	A(12,1)=23;A(12,2)=24;
+	A(13,1)=25;A(13,2)=26;
+
+	tuple<double, double, double, double, double, double, double, double, double> R = IERS(A,7);
+
+	tuple<double, double, double, double, double, double, double, double, double> D = make_tuple(0.000043633,0.000053330,13,15,0.000082418,0.000092115,0.00010181,0.00011151,25);
+
+	_assert(compareTuplesIERS(R,D,1e-8));
+
+	return 0;
+}
+
+int Legendre_01(){
+
+	Matrix A(3,3);
+	A(1,1) = 1; A(1,2) = 0; A(1,3) = 0; 
+	A(2,1) = 0; A(2,2) = -1.732050807568877; A(2,3) = 0;
+	A(3,1) = -1.118033988749895; A(3,2) = 0; A(3,3) = 1.936491673103709; 
+
+	Matrix B(3,3);
+	B(1,1) = 0; B(1,2) =  0; B(1,3) = 0; 
+	B(2,1) = -1.732050807568877; B(2,2) = 0; B(2,3) = 0; 
+	B(3,1) = 0; B(3,2) = 3.872983346207417; B(3,3) = 0;
+
+	tuple<Matrix,Matrix> R = Legendre(2,2,pi);
+
+	_assert(m_equals(A, get<0>(R), 1e-10) && m_equals(B, get<1>(R), 1e-10));
+
+	return 0;
+}
+
+int NutAngles_01(){
+
+	tuple<double,double> R = NutAngles(52347.4989583333);
+
+	_assert((fabs(-8.020665070169750e-05 - get<0>(R)) < 1e-9) && (fabs(9.414934767822421e-06 - get<1>(R)) < 1e-9));
+    
+    return 0;
+}
+
+int TimeUpdate_01() {
+    int f = 3;
+    int c = 3;
+	
+	Matrix A(f, c);
+	A(1,1) = 0; A(1,2) =  2; A(1,3) = 8;
+	A(2,1) = 1; A(2,2) = -1; A(2,3) = 0;
+	A(3,1) = 0; A(3,2) =  1; A(3,3) = 0; 
+	
+	Matrix B(f, c);
+	B(1,1) = 2; B(1,2) =  0; B(1,3) = 0; 
+	B(2,1) = 7; B(2,2) = -2; B(2,3) = 1; 
+	B(3,1) = 0; B(3,2) = -3; B(3,3) = 0; 
+	
+	Matrix C(f, c);
+	C(1,1) = 1.5; C(1,2) =  9.5; C(1,3) = -10.5; 
+	C(2,1) = -2.5; C(2,2) = 9.5; C(2,3) = -49.5; 
+	C(3,1) = -4.5; C(3,2) = -25.5; C(3,3) = -7.5; 
+	
+	Matrix R = TimeUpdate(A,B,1.5);
+    
+    _assert(m_equals(C, R, 1e-10));
+    
+    return 0;
+}
+
+int TimeUpdate_02() {
+    int f = 3;
+    int c = 3;
+	
+	Matrix A(f, c);
+	A(1,1) = 0; A(1,2) =  2; A(1,3) = 8;
+	A(2,1) = 1; A(2,2) = -1; A(2,3) = 0;
+	A(3,1) = 0; A(3,2) =  1; A(3,3) = 0; 
+	
+	Matrix B(f, c);
+	B(1,1) = 2; B(1,2) =  0; B(1,3) = 0; 
+	B(2,1) = 7; B(2,2) = -2; B(2,3) = 1; 
+	B(3,1) = 0; B(3,2) = -3; B(3,3) = 0; 
+	
+	Matrix C(f, c);
+	C(1,1) = 0; C(1,2) =  8; C(1,3) = -12; 
+	C(2,1) = -4; C(2,2) = 8; C(2,3) = -51; 
+	C(3,1) = -6; C(3,2) = -27; C(3,3) = -9; 
+	
+	Matrix R = TimeUpdate(A,B);
+    
+    _assert(m_equals(C, R, 1e-10));
+    
+    return 0;
+}
+
 int all_tests()
 {
     _verify(m_sum_01);
@@ -755,6 +937,12 @@ int all_tests()
 	_verify(Position_01);
 	_verify(sign_01);
 	_verify(AzElPa_01);
+	_verify(IERS_01);
+	_verify(IERS_02);
+	_verify(Legendre_01);
+	_verify(NutAngles_01);
+	_verify(TimeUpdate_01);
+	_verify(TimeUpdate_02);
 
     return 0;
 }
