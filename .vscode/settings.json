@@ -16,6 +16,7 @@
         "span": "cpp",
         "text_encoding": "cpp",
         "*.tcc": "cpp",
-        "cstdio": "cpp"
+        "cstdio": "cpp",
+        "ostream": "cpp"
     }
 }

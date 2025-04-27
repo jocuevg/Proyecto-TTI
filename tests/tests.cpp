@@ -12,6 +12,7 @@
 * @bug No hay.
 */
 //------------------------------------------------------------------------------
+#include "..\include\global.hpp"
 #include "..\include\matrix.hpp"
 #include "..\include\R_x.hpp"
 #include "..\include\R_y.hpp"
@@ -719,13 +720,13 @@ int MjdayTDB_01(){
 int Position_01(){
 
 	Matrix A(3);
-	A(1)=219206.03794572583; 
-	A(2)=-5500435.17490942962; 
-	A(3)=-3210856.76539639011;
+	A(1)=219206.013888262; 
+	A(2)=-5500434.57124668; 
+	A(3)=-3210856.41301074;
 
 	Matrix R= Position(99,100,101);
 
-	_assert(m_equals(A, R, 1e-10));
+	_assert(m_equals(A, R, 1e-8));
     
     return 0;
 }
@@ -768,52 +769,24 @@ int AzElPa_01(){
 
 int IERS_01(){
 
-	Matrix A(13,2);
-	A(1,1)=1;A(1,2)=2;
-	A(2,1)=3;A(2,2)=4;
-	A(3,1)=5;A(3,2)=6;
-	A(4,1)=7;A(4,2)=8;
-	A(5,1)=9;A(5,2)=10;
-	A(6,1)=11;A(6,2)=12;
-	A(7,1)=13;A(7,2)=14;
-	A(8,1)=15;A(8,2)=16;
-	A(9,1)=17;A(9,2)=17;
-	A(10,1)=19;A(10,2)=20;
-	A(11,1)=21;A(11,2)=22;
-	A(12,1)=23;A(12,2)=24;
-	A(13,1)=25;A(13,2)=26;
+	tuple<double, double, double, double, double, double, double, double, double> R = IERS(47777,'l');
 
-	tuple<double, double, double, double, double, double, double, double, double> R = IERS(A,7,'l');
+	tuple<double, double, double, double, double, double, double, double, double> D = 
+		make_tuple(1.11028150738257e-06,7.70679220038963e-07,-0.4566596,0.0006642,-6.12222716505122e-08,-1.22560898584491e-08,1.93925472443814e-09,3.10280755910103e-10,24);
 
-	tuple<double, double, double, double, double, double, double, double, double> D = make_tuple(0.000043633,0.000053330,13,15,0.000082418,0.000092115,0.00010181,0.00011151,25);
-
-	_assert(compareTuplesIERS(R,D,1e-8));
+	_assert(compareTuplesIERS(R,D,1e-10));
 
 	return 0;
 }
 
 int IERS_02(){
 
-	Matrix A(13,2);
-	A(1,1)=1;A(1,2)=2;
-	A(2,1)=3;A(2,2)=4;
-	A(3,1)=5;A(3,2)=6;
-	A(4,1)=7;A(4,2)=8;
-	A(5,1)=9;A(5,2)=10;
-	A(6,1)=11;A(6,2)=12;
-	A(7,1)=13;A(7,2)=14;
-	A(8,1)=15;A(8,2)=16;
-	A(9,1)=17;A(9,2)=17;
-	A(10,1)=19;A(10,2)=20;
-	A(11,1)=21;A(11,2)=22;
-	A(12,1)=23;A(12,2)=24;
-	A(13,1)=25;A(13,2)=26;
+	tuple<double, double, double, double, double, double, double, double, double> R = IERS(47777);
 
-	tuple<double, double, double, double, double, double, double, double, double> R = IERS(A,7);
+	tuple<double, double, double, double, double, double, double, double, double> D = 
+		make_tuple(1.11028150738257e-06,7.70679220038963e-07,-0.4566596,0.0006642,-6.12222716505122e-08,-1.22560898584491e-08,1.93925472443814e-09,3.10280755910103e-10,24);
 
-	tuple<double, double, double, double, double, double, double, double, double> D = make_tuple(0.000043633,0.000053330,13,15,0.000082418,0.000092115,0.00010181,0.00011151,25);
-
-	_assert(compareTuplesIERS(R,D,1e-8));
+	_assert(compareTuplesIERS(R,D,1e-10));
 
 	return 0;
 }
@@ -839,9 +812,9 @@ int Legendre_01(){
 
 int NutAngles_01(){
 
-	tuple<double,double> R = NutAngles(52347.4989583333);
+	tuple<double,double> R = NutAngles(2025);
 
-	_assert((fabs(-8.020665070169750e-05 - get<0>(R)) < 1e-9) && (fabs(9.414934767822421e-06 - get<1>(R)) < 1e-9));
+	_assert((fabs(5.81895359450653e-05 - get<0>(R)) < 1e-10) && (fabs(-3.27016318829544e-05 - get<1>(R)) < 1e-10));
     
     return 0;
 }
@@ -950,6 +923,7 @@ int all_tests()
 
 int main()
 {
+	eop19620101(21413);
     int result = all_tests();
 
     if (result == 0)

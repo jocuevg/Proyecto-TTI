@@ -14,6 +14,13 @@
 //------------------------------------------------------------------------------
 #include "..\include\matrix.hpp"
 
+Matrix::Matrix()
+{
+	this->n_row = 0;
+	this->n_column = 0;
+	this->data = nullptr;
+}
+
 Matrix::Matrix(const int n_row, const int n_column)
 {
 	if (n_row <= 0 || n_column <= 0)
@@ -191,6 +198,19 @@ Matrix &Matrix::operator=(Matrix &m)
 {
 	this->n_row=m.n_row;
 	this->n_column=m.n_column;
+
+	this->data = (double **)malloc(n_row * sizeof(double *));
+
+	if (this->data == NULL)
+	{
+		cout << "Matrix create: error in data\n";
+		exit(EXIT_FAILURE);
+	}
+
+	for (int i = 0; i < n_row; i++)
+	{
+		this->data[i] = (double *)malloc(n_column * sizeof(double));
+	}
 
 	for (int i = 1; i <= this->n_row; i++)
 	{

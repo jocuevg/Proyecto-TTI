@@ -1,36 +1,42 @@
 //$Header$
 //------------------------------------------------------------------------------
-// IERS
+// global
 //------------------------------------------------------------------------------
 // Proyecto-TTI.
 //
 //
-/**@file IERS.hpp
- * @brief Archivo cabecera de operacion IERS.
+/**@file global.hpp
+ * @brief Archivo cabecera de operacion global.
  *
  * @author Jose Cuevas Gil de Gomez
  * @bug No hay.
  */
 //------------------------------------------------------------------------------
-#ifndef _IERS_
-#define _IERS_
+#ifndef _global_
+#define _global_
 
 #include <cmath>
-#include <tuple>
-#include "global.hpp"
+#include "matrix.hpp"
 using namespace std;
 
 //------------------------------------------------------------------------------
-// tuple<double,double,double,double,double,double,double,double,double> IERS (double Mjd_UTC,char interp ='n')
+// Matrix eopdata
 //------------------------------------------------------------------------------
 /**
- * @brief Operacion IERS.
- *
- * @param [in] Mjd_UTC Tiempo. 
- * @param [in] interp intercepcion. 
- * @return Gestión de datos de tiempo y movimiento polar del IERS.
+ * @brief Constante global eopdata.
  */
 //------------------------------------------------------------------------------
-tuple<double,double,double,double,double,double,double,double,double> IERS (double Mjd_UTC,char interp ='n');
+extern Matrix eopdata;
+
+//------------------------------------------------------------------------------
+// void eop19620101(int c)
+//------------------------------------------------------------------------------
+/**
+ * @brief Operacion lectura eop19620101.
+ *
+ * @param [in] c nuemro de columnas.
+ */
+//------------------------------------------------------------------------------
+void eop19620101(int c);
 
 #endif
