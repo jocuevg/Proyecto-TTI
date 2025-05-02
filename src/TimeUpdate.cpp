@@ -16,7 +16,7 @@
 #include "..\include\Sat_const.hpp"
 using namespace std;
 
-Matrix TimeUpdate(Matrix P, Matrix Phi, double Qdt)
+Matrix& TimeUpdate(Matrix& P, Matrix& Phi, double Qdt)
 {
   return Phi * P * transpose(Phi) + Qdt;
 }

@@ -1,35 +1,34 @@
 //$Header$
 //------------------------------------------------------------------------------
-// Position
+// LTC
 //------------------------------------------------------------------------------
 // Proyecto-TTI.
 //
 //
-/**@file Position.hpp
- * @brief Archivo cabecera de operacion Position.
+/**@file LTC.hpp
+ * @brief Archivo cabecera de operacion LTC.
  *
  * @author Jose Cuevas Gil de Gomez
  * @bug No hay.
  */
 //------------------------------------------------------------------------------
-#ifndef _Position_
-#define _Position_
+#ifndef _LTC_
+#define _LTC_
 
 #include <cmath>
 #include "matrix.hpp"
 
 //------------------------------------------------------------------------------
-// Matrix& Position(double lon,double lat,double h)
+// Matrix& LTC(double lon, double lat)
 //------------------------------------------------------------------------------
 /**
- * @brief Operacion Position.
+ * @brief Operacion LTC.
  *
- * @param [in] lon Longitud en radianes.   
- * @param [in] lan Latitud en radianes.   
- * @param [in] h Altura en metros.   
- * @return Vector posicion.
+ * @param [in] lon Longitud.
+ * @param [in] lat Latitud.
+ * @return Matriz de rotacion terrestre.
  */
 //------------------------------------------------------------------------------
-Matrix& Position(double lon,double lat,double h);
+Matrix& LTC(double lon, double lat);
 
 #endif

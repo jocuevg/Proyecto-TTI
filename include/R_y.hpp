@@ -19,7 +19,7 @@
 #include "matrix.hpp"
 
 //------------------------------------------------------------------------------
-// Matrix R_y(double angle)
+// Matrix& R_y(double angle)
 //------------------------------------------------------------------------------
 /**
  * @brief Operacion R_y.
@@ -28,6 +28,6 @@
  * @return Vector resultado.
  */
 //------------------------------------------------------------------------------
-Matrix R_y(double angle);
+Matrix& R_y(double angle);
 
 #endif

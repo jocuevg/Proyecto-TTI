@@ -19,7 +19,7 @@
 #include "matrix.hpp"
 
 //------------------------------------------------------------------------------
-// Matrix & Cheb3D(double t,double N,double Ta,double Tb,Matrix & Cx,Matrix& Cy,Matrix& Cz)
+// Matrix& Cheb3D(double t,double N,double Ta,double Tb,Matrix & Cx,Matrix& Cy,Matrix& Cz)
 //------------------------------------------------------------------------------
 /**
  * @brief Operacion Cheb3D.
@@ -34,6 +34,6 @@
  * @return Aproximación de Chebyshev de vectores de 3 dimensiones.
  */
 //------------------------------------------------------------------------------
- Matrix Cheb3D(double t,double N,double Ta,double Tb,Matrix Cx,Matrix Cy,Matrix Cz);
+ Matrix& Cheb3D(double t,double N,double Ta,double Tb,Matrix& Cx,Matrix& Cy,Matrix& Cz);
 
 #endif

@@ -19,7 +19,7 @@
 #include "matrix.hpp"
 
 //------------------------------------------------------------------------------
-// Matrix AccelPointMass(Matrix r, Matrix s,double GM)
+// Matrix& AccelPointMass(Matrix& r, Matrix& s,double GM)
 //------------------------------------------------------------------------------
 /**
  * @brief Operacion AccelPointMass.
@@ -30,6 +30,6 @@
  * @return Aceleracion.
  */
 //------------------------------------------------------------------------------
-Matrix AccelPointMass(Matrix r, Matrix s,double GM);
+Matrix& AccelPointMass(Matrix& r, Matrix& s,double GM);
 
 #endif

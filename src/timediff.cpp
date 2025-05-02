@@ -37,5 +37,5 @@ tuple<double,double,double,double,double> timediff (double UT1_UTC, double TAI_U
 
     double GPS_UTC = GPS_TAI-UTC_TAI;  // GPS-UTC time difference [s]
 
-    return make_tuple(UT1_TAI, UTC_GPS, UT1_GPS, TT_UTC, GPS_UTC);
+    return tie(UT1_TAI, UTC_GPS, UT1_GPS, TT_UTC, GPS_UTC);
 }

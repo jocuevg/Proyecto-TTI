@@ -21,7 +21,7 @@
 using namespace std;
 
 //------------------------------------------------------------------------------
-// tuple<double,double,Matrix,Matrix> AzElPa (Matrix s)
+// tuple<double,double,Matrix&,Matrix&> AzElPa (Matrix& s)
 //------------------------------------------------------------------------------
 /**
  * @brief Operacion AzElPa.
@@ -30,6 +30,6 @@ using namespace std;
  * @return Acimut [rad], Elevación [rad], Parciales de acimut con respecto a s , y Parciales de elevación con respecto a s.
  */
 //------------------------------------------------------------------------------
-tuple<double,double,Matrix,Matrix> AzElPa (Matrix s);
+tuple<double,double,Matrix&,Matrix&> AzElPa (Matrix& s);
 
 #endif

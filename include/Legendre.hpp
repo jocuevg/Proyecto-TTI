@@ -21,7 +21,7 @@
 using namespace std;
 
 //------------------------------------------------------------------------------
-// tuple<Matrix,Matrix> Legendre (int n,int m,double fi)
+// tuple<Matrix&,Matrix&> Legendre (int n,int m,double fi)
 //------------------------------------------------------------------------------
 /**
  * @brief Operacion Legendre.
@@ -32,6 +32,6 @@ using namespace std;
  * @return Polinomio de Legendre y derivado.
  */
 //------------------------------------------------------------------------------
-tuple<Matrix,Matrix> Legendre (int n,int m,double fi);
+tuple<Matrix&,Matrix&> Legendre (int n,int m,double fi);
 
 #endif

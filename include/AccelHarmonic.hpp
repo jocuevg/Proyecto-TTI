@@ -1,35 +1,37 @@
 //$Header$
 //------------------------------------------------------------------------------
-// Position
+// AccelHarmonic
 //------------------------------------------------------------------------------
 // Proyecto-TTI.
 //
 //
-/**@file Position.hpp
- * @brief Archivo cabecera de operacion Position.
+/**@file AccelHarmonic.hpp
+ * @brief Archivo cabecera de operacion AccelHarmonic.
  *
  * @author Jose Cuevas Gil de Gomez
  * @bug No hay.
  */
 //------------------------------------------------------------------------------
-#ifndef _Position_
-#define _Position_
+#ifndef _AccelHarmonic_
+#define _AccelHarmonic_
 
 #include <cmath>
 #include "matrix.hpp"
+#include "global.hpp"
 
 //------------------------------------------------------------------------------
-// Matrix& Position(double lon,double lat,double h)
+// Matrix& AccelHarmonic(Matrix& r, Matrix& E,int n_max,int m_max)
 //------------------------------------------------------------------------------
 /**
- * @brief Operacion Position.
+ * @brief Operacion AccelHarmonic.
  *
- * @param [in] lon Longitud en radianes.   
- * @param [in] lan Latitud en radianes.   
- * @param [in] h Altura en metros.   
- * @return Vector posicion.
+ * @param [in] r Vector posicion del satelite.
+ * @param [in] E Matriz de transformación.
+ * @param [in] n_max Grado maximo.
+ * @param [in] m_max Orden maximo.
+ * @return Aceleracion.
  */
 //------------------------------------------------------------------------------
-Matrix& Position(double lon,double lat,double h);
+Matrix& AccelHarmonic(Matrix& r, Matrix& E,int n_max,int m_max);
 
 #endif

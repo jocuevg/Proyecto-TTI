@@ -1,35 +1,33 @@
 //$Header$
 //------------------------------------------------------------------------------
-// Position
+// NutMatrix
 //------------------------------------------------------------------------------
 // Proyecto-TTI.
 //
 //
-/**@file Position.hpp
- * @brief Archivo cabecera de operacion Position.
+/**@file NutMatrix.hpp
+ * @brief Archivo cabecera de operacion NutMatrix.
  *
  * @author Jose Cuevas Gil de Gomez
  * @bug No hay.
  */
 //------------------------------------------------------------------------------
-#ifndef _Position_
-#define _Position_
+#ifndef _NutMatrix_
+#define _NutMatrix_
 
 #include <cmath>
 #include "matrix.hpp"
 
 //------------------------------------------------------------------------------
-// Matrix& Position(double lon,double lat,double h)
+// Matrix& NutMatrix(double Mjd_TT)
 //------------------------------------------------------------------------------
 /**
- * @brief Operacion Position.
+ * @brief Operacion NutMatrix.
  *
- * @param [in] lon Longitud en radianes.   
- * @param [in] lan Latitud en radianes.   
- * @param [in] h Altura en metros.   
- * @return Vector posicion.
+ * @param [in] Mjd_TT Fecha juliana modificada (hora terrestre).
+ * @return Matriz de nutacion.
  */
 //------------------------------------------------------------------------------
-Matrix& Position(double lon,double lat,double h);
+Matrix& NutMatrix(double Mjd_TT);
 
 #endif

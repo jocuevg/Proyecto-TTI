@@ -78,5 +78,5 @@ tuple<double, double, double, double, double, double, double, double, double> IE
         TAI_UTC = eopdata(13);              // TAI-UTC time difference [s]
     }
 
-    return make_tuple(x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC);
+    return tie(x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC);
 }

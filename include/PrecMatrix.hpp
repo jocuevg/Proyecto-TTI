@@ -1,35 +1,34 @@
 //$Header$
 //------------------------------------------------------------------------------
-// Position
+// PrecMatrix
 //------------------------------------------------------------------------------
 // Proyecto-TTI.
 //
 //
-/**@file Position.hpp
- * @brief Archivo cabecera de operacion Position.
+/**@file PrecMatrix.hpp
+ * @brief Archivo cabecera de operacion PrecMatrix.
  *
  * @author Jose Cuevas Gil de Gomez
  * @bug No hay.
  */
 //------------------------------------------------------------------------------
-#ifndef _Position_
-#define _Position_
+#ifndef _PrecMatrix_
+#define _PrecMatrix_
 
 #include <cmath>
 #include "matrix.hpp"
 
 //------------------------------------------------------------------------------
-// Matrix& Position(double lon,double lat,double h)
+// Matrix& PrecMatrix(double Mjd_1, double Mjd_2)
 //------------------------------------------------------------------------------
 /**
- * @brief Operacion Position.
+ * @brief Operacion PrecMatrix.
  *
- * @param [in] lon Longitud en radianes.   
- * @param [in] lan Latitud en radianes.   
- * @param [in] h Altura en metros.   
- * @return Vector posicion.
+ * @param [in] Mjd_1 Epoch dada (Fecha TT juliana modificada).
+ * @param [in] Mjd_2 Epoch a procesar (Fecha TT juliana modificada).
+ * @return Matriz de transformacion de Precesion.
  */
 //------------------------------------------------------------------------------
-Matrix& Position(double lon,double lat,double h);
+Matrix& PrecMatrix(double Mjd_1, double Mjd_2);
 
 #endif

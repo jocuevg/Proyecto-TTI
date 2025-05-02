@@ -13,8 +13,8 @@
 */
 //------------------------------------------------------------------------------
 #include "..\include\matrix.hpp"
+#include "..\include\global.hpp"
 #include <iostream>
-
 using namespace std;
 
 int main() {

@@ -1,21 +1,22 @@
 //$Source$
 //------------------------------------------------------------------------------
-// AccelPointMass
+// PoleMatrix
 //------------------------------------------------------------------------------
 // Proyecto-TTI.
 //
 //
-/**@file AccelPointMass.cpp
-* @brief Programacion de operacion AccelPointMass.
+/**@file PoleMatrix.cpp
+* @brief Programacion de operacion PoleMatrix.
 *
 * @author Jose Cuevas Gil de Gomez
 * @bug No hay.
 */
 //------------------------------------------------------------------------------
-#include "..\include\AccelPointMass.hpp"
+#include "..\include\PoleMatrix.hpp"
+#include "..\include\R_x.hpp"
+#include "..\include\R_y.hpp"
 
-Matrix& AccelPointMass(Matrix& r, Matrix& s,double GM){
-    Matrix& d = r - s;
+Matrix& PoleMatrix(double xp, double yp){
 
-    return ( d/(pow(norm(d),3)) + s/(pow(norm(s),3)) ) * -GM;
+    return R_y(-xp) * R_x(-yp);
 }

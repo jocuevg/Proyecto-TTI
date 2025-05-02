@@ -16,7 +16,7 @@
 #include "..\include\Sat_const.hpp"
 using namespace std;
 
-tuple<double, double, Matrix, Matrix> AzElPa(Matrix s)
+tuple<double, double, Matrix&, Matrix&> AzElPa(Matrix& s)
 {
     double pi2 = 2.0 * pi;
 
@@ -31,16 +31,16 @@ tuple<double, double, Matrix, Matrix> AzElPa(Matrix s)
     double El = atan(s(3) / rho);
 
     // Partials
-    Matrix dAds(3);
+    Matrix &dAds = zeros(3);
     dAds(1) = s(2) / (rho * rho);
     dAds(2) = -s(1) / (rho * rho);
     dAds(3) = 0;
 
-    Matrix dEds(3);
+    Matrix &dEds = zeros(3);
     dEds(1) = -s(1) * s(3) / rho;
     dEds(2) = -s(2) * s(3) / rho;
     dEds(3) = rho;
     dEds = dEds / dot(s, s);
 
-    return make_tuple(Az, El, dAds, dEds);
+    return tie(Az, El, dAds, dEds);
 }

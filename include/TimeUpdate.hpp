@@ -20,7 +20,7 @@
 using namespace std;
 
 //------------------------------------------------------------------------------
-// Matrix TimeUpdate(Matrix P, Matrix Phi, double Qdt = 0.0)
+// Matrix& TimeUpdate(Matrix& P, Matrix& Phi, double Qdt = 0.0)
 //------------------------------------------------------------------------------
 /**
  * @brief Operacion TimeUpdate.
@@ -31,6 +31,6 @@ using namespace std;
  * @return Hora adaptada.
  */
 //------------------------------------------------------------------------------
-Matrix TimeUpdate(Matrix P, Matrix Phi, double Qdt = 0.0);
+Matrix& TimeUpdate(Matrix& P, Matrix& Phi, double Qdt = 0.0);
 
 #endif

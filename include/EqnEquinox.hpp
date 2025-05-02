@@ -1,35 +1,33 @@
 //$Header$
 //------------------------------------------------------------------------------
-// Position
+// EqnEquinox
 //------------------------------------------------------------------------------
 // Proyecto-TTI.
 //
 //
-/**@file Position.hpp
- * @brief Archivo cabecera de operacion Position.
+/**@file EqnEquinox.hpp
+ * @brief Archivo cabecera de operacion EqnEquinox.
  *
  * @author Jose Cuevas Gil de Gomez
  * @bug No hay.
  */
 //------------------------------------------------------------------------------
-#ifndef _Position_
-#define _Position_
+#ifndef _EqnEquinox_
+#define _EqnEquinox_
 
 #include <cmath>
 #include "matrix.hpp"
 
 //------------------------------------------------------------------------------
-// Matrix& Position(double lon,double lat,double h)
+// double EqnEquinox(double Mjd_TT)
 //------------------------------------------------------------------------------
 /**
- * @brief Operacion Position.
+ * @brief Operacion EqnEquinox.
  *
- * @param [in] lon Longitud en radianes.   
- * @param [in] lan Latitud en radianes.   
- * @param [in] h Altura en metros.   
- * @return Vector posicion.
+ * @param [in] Mjd_TT Fecha juliana modificada (hora terrestre).
+ * @return Ecuacion de equinocio.
  */
 //------------------------------------------------------------------------------
-Matrix& Position(double lon,double lat,double h);
+double EqnEquinox(double Mjd_TT);
 
 #endif

@@ -1,35 +1,34 @@
 //$Header$
 //------------------------------------------------------------------------------
-// Position
+// PoleMatrix
 //------------------------------------------------------------------------------
 // Proyecto-TTI.
 //
 //
-/**@file Position.hpp
- * @brief Archivo cabecera de operacion Position.
+/**@file PoleMatrix.hpp
+ * @brief Archivo cabecera de operacion PoleMatrix.
  *
  * @author Jose Cuevas Gil de Gomez
  * @bug No hay.
  */
 //------------------------------------------------------------------------------
-#ifndef _Position_
-#define _Position_
+#ifndef _PoleMatrix_
+#define _PoleMatrix_
 
 #include <cmath>
 #include "matrix.hpp"
 
 //------------------------------------------------------------------------------
-// Matrix& Position(double lon,double lat,double h)
+// Matrix& PoleMatrix(double xp, double yp)
 //------------------------------------------------------------------------------
 /**
- * @brief Operacion Position.
+ * @brief Operacion PoleMatrix.
  *
- * @param [in] lon Longitud en radianes.   
- * @param [in] lan Latitud en radianes.   
- * @param [in] h Altura en metros.   
- * @return Vector posicion.
+ * @param [in] xp Coordenada x del polo.
+ * @param [in] yp Coordenada y del polo.
+ * @return Matriz del polo.
  */
 //------------------------------------------------------------------------------
-Matrix& Position(double lon,double lat,double h);
+Matrix& PoleMatrix(double xp, double yp);
 
 #endif

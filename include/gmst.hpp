@@ -1,35 +1,33 @@
 //$Header$
 //------------------------------------------------------------------------------
-// Position
+// gmst
 //------------------------------------------------------------------------------
 // Proyecto-TTI.
 //
 //
-/**@file Position.hpp
- * @brief Archivo cabecera de operacion Position.
+/**@file gmst.hpp
+ * @brief Archivo cabecera de operacion gmst.
  *
  * @author Jose Cuevas Gil de Gomez
  * @bug No hay.
  */
 //------------------------------------------------------------------------------
-#ifndef _Position_
-#define _Position_
+#ifndef _gmst_
+#define _gmst_
 
 #include <cmath>
 #include "matrix.hpp"
 
 //------------------------------------------------------------------------------
-// Matrix& Position(double lon,double lat,double h)
+// double gmst(double Mjd_UT1)
 //------------------------------------------------------------------------------
 /**
- * @brief Operacion Position.
+ * @brief Operacion gmst.
  *
- * @param [in] lon Longitud en radianes.   
- * @param [in] lan Latitud en radianes.   
- * @param [in] h Altura en metros.   
- * @return Vector posicion.
+ * @param [in] Mjd_UT1 Fecha UT1 juliana modificada.
+ * @return GMST en radianes.
  */
 //------------------------------------------------------------------------------
-Matrix& Position(double lon,double lat,double h);
+double gmst(double Mjd_UT1);
 
 #endif
