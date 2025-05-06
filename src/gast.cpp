@@ -1,21 +1,23 @@
 //$Source$
 //------------------------------------------------------------------------------
-// AccelPointMass
+// gast
 //------------------------------------------------------------------------------
 // Proyecto-TTI.
 //
 //
-/**@file AccelPointMass.cpp
-* @brief Programacion de operacion AccelPointMass.
+/**@file gast.cpp
+* @brief Programacion de operacion gast.
 *
 * @author Jose Cuevas Gil de Gomez
 * @bug No hay.
 */
 //------------------------------------------------------------------------------
-#include "..\include\AccelPointMass.hpp"
+#include "..\include\gast.hpp"
+#include "..\include\gmst.hpp"
+#include "..\include\EqnEquinox.hpp"
+#include "..\include\Sat_const.hpp"
 
-Matrix& AccelPointMass(Matrix& r, Matrix& s,double GM){
-    Matrix& d = r - s;
+double gast(double Mjd_UT1){
 
-    return ( d/(pow(norm(transpose(d)),3)) + s/(pow(norm(transpose(s)),3)) ) * -GM;
+    return fmod ( gmst(Mjd_UT1) + EqnEquinox(Mjd_UT1), 2*pi );
 }

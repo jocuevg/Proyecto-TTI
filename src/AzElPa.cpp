@@ -20,27 +20,29 @@ tuple<double, double, Matrix&, Matrix&> AzElPa(Matrix& s)
 {
     double pi2 = 2.0 * pi;
 
-    double rho = sqrt(s(1) * s(1) + s(2) * s(2));
+    Matrix& st=transpose(s);
+
+    double rho = sqrt(st(1) * st(1) + st(2) * st(2));
 
     // Angles
-    double Az = atan2(s(1), s(2));
+    double Az = atan2(st(1), st(2));
 
     if (Az < 0.0)
         Az = Az + pi2;
 
-    double El = atan(s(3) / rho);
+    double El = atan(st(3) / rho);
 
     // Partials
     Matrix &dAds = zeros(3);
-    dAds(1) = s(2) / (rho * rho);
-    dAds(2) = -s(1) / (rho * rho);
+    dAds(1) = st(2) / (rho * rho);
+    dAds(2) = -st(1) / (rho * rho);
     dAds(3) = 0;
 
     Matrix &dEds = zeros(3);
-    dEds(1) = -s(1) * s(3) / rho;
-    dEds(2) = -s(2) * s(3) / rho;
+    dEds(1) = -st(1) * st(3) / rho;
+    dEds(2) = -st(2) * st(3) / rho;
     dEds(3) = rho;
-    dEds = dEds / dot(s, s);
+    dEds = dEds / dot(st, st);
 
     return tie(Az, El, dAds, dEds);
 }

@@ -41,6 +41,8 @@
 #include "..\include\PoleMatrix.hpp"
 #include "..\include\PrecMatrix.hpp"
 #include "..\include\gmst.hpp"
+#include "..\include\gast.hpp"
+#include "..\include\MeasUpdate.hpp"
 #include <cstdio>
 #include <cmath>
 #include <iomanip>
@@ -646,14 +648,14 @@ int AccelPointMass_01() {
     int f = 3;
     int c = 3;
 	
-	Matrix A(f);
-	A(1,1) = 1; A(1,2) =  2; A(1,3) = 3; 
+	Matrix A(f,1);
+	A(1,1) = 1; A(2,1) =  2; A(3,1) = 3; 
 	
-	Matrix B(f);
-	B(1,1) = 4; B(1,2) =  5; B(1,3) = 6;
+	Matrix B(f,1);
+	B(1,1) = 4; B(2,1) =  5; B(3,1) = 6;
 	
-	Matrix C(f);
-	C(1,1) = 0.0463899400720928; C(1,2) =  0.0419499176126264; C(1,3) = 0.0375098951531599; 
+	Matrix C(f,1);
+	C(1,1) = 0.0463899400720928; C(2,1) =  0.0419499176126264; C(3,1) = 0.0375098951531599; 
 	
 	Matrix R = AccelPointMass(A,B,3);
     
@@ -760,8 +762,8 @@ int timediff_01(){
 
 int AzElPa_01(){
 
-	Matrix A(3);
-	A(1)=1;A(2)=1;A(3)=1;
+	Matrix A(3,1);
+	A(1,1)=1;A(2,1)=1;A(3,1)=1;
 	tuple<double,double,Matrix&,Matrix&> R = AzElPa(A);
 	
 	Matrix& B=zeros(3);
@@ -996,6 +998,42 @@ int gmst_01(){
 	return 0;
 }
 
+int gast_01(){
+	_assert(fabs(gast(2025)-4.392987359940904)<1e-10);
+
+	return 0;
+}
+
+int MeasUpdate_01(){
+	Matrix x(3,1);
+	x(1,1)=1;x(2,1)=1;x(3,1)=1;
+
+	Matrix G(3);
+	G(1)=2;G(2)=2;G(2)=2;
+
+	Matrix P(3,3);
+	P(1,1)=1;P(1,2)=2;P(1,3)=3;
+	P(2,1)=4;P(2,2)=5;P(2,3)=6;
+	P(3,1)=7;P(3,2)=8;P(3,3)=9;
+
+	auto[A,B,C]=MeasUpdate(x,1.5,0.5,0.005,G,P,3);
+
+	Matrix A1(3);
+	A1(1)=0.066666657407409;A1(2)=0.166666643518522;A1(3)=0.266666629629635;
+	Matrix B1(3);
+	B1(1)=1.066666657407409;B1(2)=1.166666643518522;B1(3)=1.266666629629635;
+	Matrix C1(3,3);
+	C1(1,1)=-0.599999777777809;C1(1,2)=0.000000277777739;C1(1,3)=0.600000333333287;
+	C1(2,1)=0.000000555555479;C1(2,2)=0.000000694444348;C1(2,3)=0.000000833333218;
+	C1(3,1)=0.600000888888765;C1(3,2)=0.000001111110957;C1(3,3)=-0.599998666666853;
+
+	_assert(m_equals(A,transpose(A1), 1e-10));
+	_assert(m_equals(B,transpose(B1), 1e-10));
+	_assert(m_equals(C,C1, 1e-10));
+
+	return 0;
+}
+
 int all_tests()
 {
     _verify(m_sum_01);
@@ -1049,6 +1087,8 @@ int all_tests()
 	_verify(PoleMatrix_01);
 	_verify(PrecMatrix_01);
 	_verify(gmst_01);
+	_verify(gast_01);
+	_verify(MeanObliquity_01);
 
     return 0;
 }
