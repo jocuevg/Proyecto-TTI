@@ -1,0 +1,7 @@
+<map id="Matrix::operator/" name="Matrix::operator/">
+<area shape="rect" id="Node000001" title="División elemento a elemento entre matrices." alt="" coords="5,31,119,56"/>
+<area shape="rect" id="Node000002" href="$matrix_8cpp.html#ad8d8519e7f94df41a4c5b535b4899222" title="Calcula la inversa de una matriz." alt="" coords="196,5,235,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,32,180,21,181,26,119,37"/>
+<area shape="rect" id="Node000003" href="$classMatrix.html#a2dba13c45127354c9f75ef576f49269b" title="Constructor de vector." alt="" coords="167,55,264,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="119,50,152,55,151,60,119,55"/>
+</map>

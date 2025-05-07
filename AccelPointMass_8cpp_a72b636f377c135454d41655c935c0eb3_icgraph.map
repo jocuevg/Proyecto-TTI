@@ -1,0 +1,14 @@
+<map id="AccelPointMass" name="AccelPointMass">
+<area shape="rect" id="Node000001" title="Operacion AccelPointMass." alt="" coords="509,31,625,56"/>
+<area shape="rect" id="Node000002" href="$Accel_8cpp.html#a28040ec3672b4e1805218ad1cd43bfa0" title="Operacion Accel." alt="" coords="406,5,461,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="493,32,461,26,462,21,494,27"/>
+<area shape="rect" id="Node000006" href="$tests_8cpp.html#a04dd8280cfafda306d5acf944f617cf0" title=" " alt="" coords="221,56,358,82"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="494,53,359,65,359,60,493,47"/>
+<area shape="rect" id="Node000003" href="$tests_8cpp.html#ad6e00c9978210449973a47573878ff32" title=" " alt="" coords="252,7,327,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="391,21,328,22,328,16,391,16"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp.html#a438723717e25f3ab29c50c261ed54996" title=" " alt="" coords="103,32,173,58"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="237,31,174,42,173,36,236,26"/>
+<area shape="rect" id="Node000005" href="$tests_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,32,55,58"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="87,48,55,48,55,42,87,42"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="205,58,173,53,174,48,206,53"/>
+</map>

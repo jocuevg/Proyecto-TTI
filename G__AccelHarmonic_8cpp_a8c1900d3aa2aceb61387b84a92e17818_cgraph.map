@@ -1,0 +1,18 @@
+<map id="G_AccelHarmonic" name="G_AccelHarmonic">
+<area shape="rect" id="Node000001" title="Operacion G_AccelHarmonic." alt="" coords="5,181,133,207"/>
+<area shape="rect" id="Node000002" href="$AccelHarmonic_8cpp.html#a97ea72b6a1426f18c34d295e50b8fc4b" title="Operacion AccelHarmonic." alt="" coords="181,105,291,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,178,191,135,193,140,100,183"/>
+<area shape="rect" id="Node000004" href="$matrix_8cpp.html#a56d60ea1f08402246a7cfd477d69a618" title="Crea una matriz de ceros." alt="" coords="465,56,518,82"/>
+<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="116,205,179,218,257,226,298,225,339,219,379,209,416,192,440,173,458,148,480,96,485,98,462,150,443,176,419,196,381,214,340,225,299,230,257,231,178,223,115,210"/>
+<area shape="rect" id="Node000006" href="$matrix_8cpp.html#acbd9778b697f9ad3da64ef53b850e2c9" title="Calcula la transpuesta de una matriz." alt="" coords="339,156,417,182"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="133,186,323,171,323,176,133,192"/>
+<area shape="rect" id="Node000007" href="$matrix_8cpp.html#af16352dd8bf82fa480a8a6c3f0f0b383" title="Asigna un vector a la columna n de una matriz." alt="" coords="182,257,290,283"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="100,205,193,248,191,253,98,210"/>
+<area shape="rect" id="Node000003" href="$Legendre_8cpp.html#a55ce532de3c95506384990ae714dd99d" title="Operacion Legendre." alt="" coords="340,5,416,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="254,103,344,38,347,43,258,107"/>
+<area shape="poly" id="edge6_Node000002_Node000004" title=" " alt="" coords="291,102,338,92,449,72,450,77,340,97,292,107"/>
+<area shape="rect" id="Node000005" href="$matrix_8cpp.html#a907c9c6f53fc52d17e86b507b156536f" title="Calcula la norma euclídea de un vector." alt="" coords="353,107,403,132"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="292,116,338,116,338,122,292,121"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="275,129,327,148,325,153,273,134"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="410,29,452,48,450,53,407,34"/>
+</map>

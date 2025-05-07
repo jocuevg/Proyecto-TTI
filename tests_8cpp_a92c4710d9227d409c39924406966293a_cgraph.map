@@ -1,0 +1,7 @@
+<map id="m_cross_01" name="m_cross_01">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,98,56"/>
+<area shape="rect" id="Node000002" href="$matrix_8cpp.html#a64bac8cc779042ecf295e590d17a59e5" title="Producto vectorial entre dos vectores de dimensión 3." alt="" coords="158,5,211,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,32,142,23,143,29,99,37"/>
+<area shape="rect" id="Node000003" href="$tests_8cpp.html#a3677c19fd7f5e97a58733e0a15082327" title=" " alt="" coords="146,55,223,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="98,49,131,55,130,60,98,54"/>
+</map>

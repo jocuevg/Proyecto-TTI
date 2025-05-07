@@ -1,0 +1,14 @@
+<map id="G_AccelHarmonic" name="G_AccelHarmonic">
+<area shape="rect" id="Node000001" title="Operacion G_AccelHarmonic." alt="" coords="529,29,656,55"/>
+<area shape="rect" id="Node000002" href="$tests_8cpp.html#a7e46fc50fef8144a1c99e992e44d5391" title=" " alt="" coords="221,5,369,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="513,38,369,27,370,21,513,33"/>
+<area shape="rect" id="Node000005" href="$VarEqn_8cpp.html#a6e153d0ae05034cb5b346189ebb847d3" title="Operacion VarEqn." alt="" coords="417,55,481,80"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="514,59,482,65,481,59,513,54"/>
+<area shape="rect" id="Node000003" href="$tests_8cpp.html#a438723717e25f3ab29c50c261ed54996" title=" " alt="" coords="103,31,173,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="206,35,174,40,173,35,205,30"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,55,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="87,46,55,46,55,41,87,41"/>
+<area shape="rect" id="Node000006" href="$tests_8cpp.html#a47e267fa98a83e79696470d1b6e67569" title=" " alt="" coords="253,55,337,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="402,70,338,70,338,65,402,65"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="237,61,173,51,174,46,238,56"/>
+</map>

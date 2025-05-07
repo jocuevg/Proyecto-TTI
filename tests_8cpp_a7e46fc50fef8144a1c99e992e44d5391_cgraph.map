@@ -1,0 +1,22 @@
+<map id="G_AccelHarmonic_01" name="G_AccelHarmonic_01">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,207,154,232"/>
+<area shape="rect" id="Node000002" href="$G__AccelHarmonic_8cpp.html#a8c1900d3aa2aceb61387b84a92e17818" title="Operacion G_AccelHarmonic." alt="" coords="202,181,329,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,207,186,202,186,208,155,212"/>
+<area shape="rect" id="Node000009" href="$tests_8cpp.html#a3677c19fd7f5e97a58733e0a15082327" title=" " alt="" coords="227,231,304,256"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="155,226,212,234,211,239,154,232"/>
+<area shape="rect" id="Node000003" href="$AccelHarmonic_8cpp.html#a97ea72b6a1426f18c34d295e50b8fc4b" title="Operacion AccelHarmonic." alt="" coords="377,105,487,131"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="295,178,387,135,389,140,297,183"/>
+<area shape="rect" id="Node000005" href="$matrix_8cpp.html#a56d60ea1f08402246a7cfd477d69a618" title="Crea una matriz de ceros." alt="" coords="662,56,714,82"/>
+<area shape="poly" id="edge10_Node000002_Node000005" title=" " alt="" coords="312,205,376,218,453,226,494,225,536,219,575,209,612,192,636,173,654,148,677,96,682,98,659,150,640,176,615,196,577,214,537,225,495,230,453,231,375,223,311,210"/>
+<area shape="rect" id="Node000007" href="$matrix_8cpp.html#acbd9778b697f9ad3da64ef53b850e2c9" title="Calcula la transpuesta de una matriz." alt="" coords="535,156,614,182"/>
+<area shape="poly" id="edge9_Node000002_Node000007" title=" " alt="" coords="329,186,519,171,520,176,330,192"/>
+<area shape="rect" id="Node000008" href="$matrix_8cpp.html#af16352dd8bf82fa480a8a6c3f0f0b383" title="Asigna un vector a la columna n de una matriz." alt="" coords="378,257,486,283"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="304,205,330,216,394,247,392,252,328,221,302,210"/>
+<area shape="rect" id="Node000004" href="$Legendre_8cpp.html#a55ce532de3c95506384990ae714dd99d" title="Operacion Legendre." alt="" coords="537,5,612,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="451,103,541,38,544,43,454,107"/>
+<area shape="poly" id="edge7_Node000003_Node000005" title=" " alt="" coords="487,102,535,92,646,72,647,77,536,97,488,107"/>
+<area shape="rect" id="Node000006" href="$matrix_8cpp.html#a907c9c6f53fc52d17e86b507b156536f" title="Calcula la norma euclídea de un vector." alt="" coords="549,107,600,132"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="488,116,534,116,534,122,488,121"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="471,129,523,148,522,153,470,134"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="606,29,648,48,646,53,604,34"/>
+</map>
