@@ -28,7 +28,7 @@ using namespace std;
  * @brief Operacion JPL_Eph_DE430.
  *
  * @param [in] Mjd_TDB Fecha juliana modificada de TDB. 
- * @return r_Earth(solar system barycenter (SSB)),r_Mars,r_Mercury,r_Venus,
+ * @return Vectores columna r_Earth(solar system barycenter (SSB)),r_Mars,r_Mercury,r_Venus,
  *  r_Jupiter,r_Saturn,r_Uranus,r_Neptune,r_Pluto,r_Moon,
  *  r_Sun(geocentric equatorial position ([m]) referred to the International Celestial Reference Frame (ICRF)).
  */

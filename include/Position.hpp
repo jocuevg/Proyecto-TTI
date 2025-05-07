@@ -27,7 +27,7 @@
  * @param [in] lon Longitud en radianes.   
  * @param [in] lan Latitud en radianes.   
  * @param [in] h Altura en metros.   
- * @return Vector posicion.
+ * @return Vector fila posicion.
  */
 //------------------------------------------------------------------------------
 Matrix& Position(double lon,double lat,double h);

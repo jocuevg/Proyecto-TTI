@@ -142,10 +142,16 @@ tuple<double,double> NutAngles (double Mjd_TT)
   //   Om  mean longitude of the ascending node
 
   double l  = fmod (  485866.733 + (1325.0*rev +  715922.633)*T + 31.310*T2 + 0.064*T3, rev );
+  if (l < 0) l += rev;
   double lp = fmod ( 1287099.804 + (  99.0*rev + 1292581.224)*T -  0.577*T2 - 0.012*T3, rev );
+  if (lp < 0) lp += rev;
   double F  = fmod (  335778.877 + (1342.0*rev +  295263.137)*T - 13.257*T2 + 0.011*T3, rev );
+  if (F < 0) F += rev;
   double D  = fmod ( 1072261.307 + (1236.0*rev + 1105601.328)*T -  6.891*T2 + 0.019*T3, rev );
+  if (D < 0) D += rev;
   double Om = fmod (  450160.280 - (   5.0*rev +  482890.539)*T +  7.455*T2 + 0.008*T3, rev );
+  if (Om < 0) Om += rev;
+
 
   // Nutation in longitude and obliquity [rad]
 

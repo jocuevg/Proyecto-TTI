@@ -17,6 +17,7 @@
         "text_encoding": "cpp",
         "*.tcc": "cpp",
         "cstdio": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "random": "cpp"
     }
 }

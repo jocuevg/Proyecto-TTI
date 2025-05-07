@@ -1,33 +1,35 @@
 //$Header$
 //------------------------------------------------------------------------------
-// R_x
+// VarEqn
 //------------------------------------------------------------------------------
 // Proyecto-TTI.
 //
 //
-/**@file R_x.hpp
- * @brief Archivo cabecera de operacion R_x.
+/**@file VarEqn.hpp
+ * @brief Archivo cabecera de operacion VarEqn.
  *
  * @author Jose Cuevas Gil de Gomez
  * @bug No hay.
  */
 //------------------------------------------------------------------------------
-#ifndef _R_x_
-#define _R_x_
+#ifndef _VarEqn_
+#define _VarEqn_
 
 #include <cmath>
 #include "matrix.hpp"
 
 //------------------------------------------------------------------------------
-// Matrix& R_x(double angle)
+// Matrix& VarEqn(double x,Matrix& yPhi)
 //------------------------------------------------------------------------------
 /**
- * @brief Operacion R_x.
+ * @brief Operacion VarEqn.
  *
- * @param [in] angle angulo de rotacion.
- * @return Matriz resultado.
+ * @param [in] x Tiempo desde epoch en segundos.
+ * @param [in] Y vector columna (6+36)-dim que comprende el vector de estado (y) 
+ *      y la matriz de transición de estado (Phi) en orden de almacenamiento por columnas.
+ * @return Derivada de yPhi (vector fila por conveniencia).
  */
 //------------------------------------------------------------------------------
-Matrix& R_x(double angle);
+Matrix& VarEqn(double x,Matrix& yPhi);
 
 #endif

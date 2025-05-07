@@ -1,33 +1,34 @@
 //$Header$
 //------------------------------------------------------------------------------
-// R_x
+// Accel
 //------------------------------------------------------------------------------
 // Proyecto-TTI.
 //
 //
-/**@file R_x.hpp
- * @brief Archivo cabecera de operacion R_x.
+/**@file Accel.hpp
+ * @brief Archivo cabecera de operacion Accel.
  *
  * @author Jose Cuevas Gil de Gomez
  * @bug No hay.
  */
 //------------------------------------------------------------------------------
-#ifndef _R_x_
-#define _R_x_
+#ifndef _Accel_
+#define _Accel_
 
 #include <cmath>
 #include "matrix.hpp"
 
 //------------------------------------------------------------------------------
-// Matrix& R_x(double angle)
+// Matrix& Accel(double x,Matrix& Y)
 //------------------------------------------------------------------------------
 /**
- * @brief Operacion R_x.
+ * @brief Operacion Accel.
  *
- * @param [in] angle angulo de rotacion.
- * @return Matriz resultado.
+ * @param [in] x Hora terrestre.
+ * @param [in] Y Vector columna del estado del satelite en el sistema ICRF/EME2000.
+ * @return Vector (fila por conveniencia) aceleracion (a=d^2r/dt^2) en el sistema ICRF/EME2000.
  */
 //------------------------------------------------------------------------------
-Matrix& R_x(double angle);
+Matrix& Accel(double x,Matrix& Y);
 
 #endif

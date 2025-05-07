@@ -28,10 +28,10 @@
  * @param [in] N Numero de coeficiente.
  * @param [in] Ta Inicio del intervalo.
  * @param [in] Tb Final del intervale.
- * @param [in] Cx Coeficientes del polimonio de Chebyshev (coordenada x).
- * @param [in] Cy Coeficientes del polimonio de Chebyshev (coordenada y).
- * @param [in] Cz Coeficientes del polimonio de Chebyshev (coordenada z).
- * @return Aproximación de Chebyshev de vectores de 3 dimensiones.
+ * @param [in] Cx Coeficientes del polimonio de Chebyshev (coordenada x) fila.
+ * @param [in] Cy Coeficientes del polimonio de Chebyshev (coordenada y) fila.
+ * @param [in] Cz Coeficientes del polimonio de Chebyshev (coordenada z) fila.
+ * @return Vector fila, aproximación de Chebyshev de vectores de 3 dimensiones.
  */
 //------------------------------------------------------------------------------
  Matrix& Cheb3D(double t,double N,double Ta,double Tb,Matrix& Cx,Matrix& Cy,Matrix& Cz);

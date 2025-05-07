@@ -24,10 +24,10 @@
 /**
  * @brief Operacion AccelPointMass.
  *
- * @param [in] r Vector posicion del satelite.
- * @param [in] s Vector posicion del punto de masa.
+ * @param [in] r Vector columna posicion del satelite.
+ * @param [in] s Vector columna posicion del punto de masa.
  * @param [in] GM Coeficiente gravitacional de la masa.
- * @return Aceleracion.
+ * @return Vector columna aceleracion.
  */
 //------------------------------------------------------------------------------
 Matrix& AccelPointMass(Matrix& r, Matrix& s,double GM);

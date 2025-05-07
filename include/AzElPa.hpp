@@ -26,8 +26,8 @@ using namespace std;
 /**
  * @brief Operacion AzElPa.
  *
- * @param [in] s Coordenadas de la tangente local topocéntrica. 
- * @return Acimut [rad], Elevación [rad], Parciales de acimut con respecto a s , y Parciales de elevación con respecto a s.
+ * @param [in] s Vector columna de coordenadas de la tangente local topocéntrica. 
+ * @return Acimut [rad], Elevación [rad], Vector fila de parciales de acimut con respecto a s , y Vector fila de parciales de elevación con respecto a s.
  */
 //------------------------------------------------------------------------------
 tuple<double,double,Matrix&,Matrix&> AzElPa (Matrix& s);

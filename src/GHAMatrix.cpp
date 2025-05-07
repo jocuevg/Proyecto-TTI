@@ -1,25 +1,22 @@
 //$Source$
 //------------------------------------------------------------------------------
-// gast
+// GHAMatrix
 //------------------------------------------------------------------------------
 // Proyecto-TTI.
 //
 //
-/**@file gast.cpp
-* @brief Programacion de operacion gast.
+/**@file GHAMatrix.cpp
+* @brief Programacion de operacion GHAMatrix.
 *
 * @author Jose Cuevas Gil de Gomez
 * @bug No hay.
 */
 //------------------------------------------------------------------------------
+#include "..\include\GHAMatrix.hpp"
+#include "..\include\R_z.hpp"
 #include "..\include\gast.hpp"
-#include "..\include\gmst.hpp"
-#include "..\include\EqnEquinox.hpp"
-#include "..\include\Sat_const.hpp"
 
-double gast(double Mjd_UT1){
+Matrix& GHAMatrix(double Mjd_UT1){
 
-    double gstime= fmod ( gmst(Mjd_UT1) + EqnEquinox(Mjd_UT1), pi2 );
-    if(gstime<0) gstime+=pi2;
-    return gstime;
+    return R_z( gast(Mjd_UT1) );
 }

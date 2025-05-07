@@ -1,33 +1,33 @@
 //$Header$
 //------------------------------------------------------------------------------
-// R_x
+// GHAMatrix
 //------------------------------------------------------------------------------
 // Proyecto-TTI.
 //
 //
-/**@file R_x.hpp
- * @brief Archivo cabecera de operacion R_x.
+/**@file GHAMatrix.hpp
+ * @brief Archivo cabecera de operacion GHAMatrix.
  *
  * @author Jose Cuevas Gil de Gomez
  * @bug No hay.
  */
 //------------------------------------------------------------------------------
-#ifndef _R_x_
-#define _R_x_
+#ifndef _GHAMatrix_
+#define _GHAMatrix_
 
 #include <cmath>
 #include "matrix.hpp"
 
 //------------------------------------------------------------------------------
-// Matrix& R_x(double angle)
+// Matrix& GHAMatrix(double Mjd_UT1)
 //------------------------------------------------------------------------------
 /**
- * @brief Operacion R_x.
+ * @brief Operacion GHAMatrix.
  *
- * @param [in] angle angulo de rotacion.
- * @return Matriz resultado.
+ * @param [in] Mjd_UT1 Fecha UT1 juliana modificada.
+ * @return Matriz angulo de la hora de Greenwich.
  */
 //------------------------------------------------------------------------------
-Matrix& R_x(double angle);
+Matrix& GHAMatrix(double Mjd_UT1);
 
 #endif

@@ -15,6 +15,7 @@
 #include "..\include\global.hpp"
 using namespace std;
 
+Param AuxParam;
 Matrix eopdata;
 Matrix PC;
 Matrix Cnm;

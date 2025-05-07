@@ -25,7 +25,7 @@
  * @brief Operacion R_y.
  *
  * @param [in] angle angulo de rotacion.
- * @return Vector resultado.
+ * @return Matriz resultado.
  */
 //------------------------------------------------------------------------------
 Matrix& R_y(double angle);

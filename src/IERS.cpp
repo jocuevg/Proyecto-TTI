@@ -26,9 +26,8 @@ tuple<double, double, double, double, double, double, double, double, double> IE
     {
         // linear interpolation
         mjd = (floor(Mjd_UTC));
-        for (int j = 1; j <= eopdata.n_column; j++) {
-            if (eopdata(4,j) == mjd) {
-                i=j;
+        for (i = 1; i <= eopdata.n_column; i++) {
+            if (eopdata(4,i) == mjd) {
                 break; 
             }
         }
@@ -58,24 +57,23 @@ tuple<double, double, double, double, double, double, double, double, double> IE
     else if (interp == 'n')
     {
         mjd = (floor(Mjd_UTC));
-        for (int j = 1; j <= eopdata.n_column; j++) {
-            if (eopdata(4,j) == mjd) {
-                i=j;
+        for (i = 1; i <= eopdata.n_column; i++) {
+            if (eopdata(4,i) == mjd) {
                 break; 
             }
         }        
-        eopdata = extract_column(eopdata,i);
+        Matrix& eop = extract_column(eopdata,i);
         // Setting of IERS Earth rotation parameters
         // (UT1-UTC [s], TAI-UTC [s], x ["], y ["])
-        x_pole = eopdata(5) / Arcs; // Pole coordinate [rad]
-        y_pole = eopdata(6) / Arcs; // Pole coordinate [rad]
-        UT1_UTC = eopdata(7);             // UT1-UTC time difference [s]
-        LOD = eopdata(8);                 // Length of day [s]
-        dpsi = eopdata(9) / Arcs;
-        deps = eopdata(10) / Arcs;
-        dx_pole = eopdata(11) / Arcs; // Pole coordinate [rad]
-        dy_pole = eopdata(12) / Arcs; // Pole coordinate [rad]
-        TAI_UTC = eopdata(13);              // TAI-UTC time difference [s]
+        x_pole = eop(5) / Arcs; // Pole coordinate [rad]
+        y_pole = eop(6) / Arcs; // Pole coordinate [rad]
+        UT1_UTC = eop(7);             // UT1-UTC time difference [s]
+        LOD = eop(8);                 // Length of day [s]
+        dpsi = eop(9) / Arcs;
+        deps = eop(10) / Arcs;
+        dx_pole = eop(11) / Arcs; // Pole coordinate [rad]
+        dy_pole = eop(12) / Arcs; // Pole coordinate [rad]
+        TAI_UTC = eop(13);              // TAI-UTC time difference [s]
     }
 
     return tie(x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC);
