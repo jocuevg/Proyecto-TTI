@@ -18,6 +18,7 @@
         "*.tcc": "cpp",
         "cstdio": "cpp",
         "ostream": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "numbers": "cpp"
     }
 }
