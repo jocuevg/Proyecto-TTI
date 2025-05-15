@@ -1,0 +1,14 @@
+<map id="PoleMatrix_01" name="PoleMatrix_01">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,109,56"/>
+<area shape="rect" id="Node000002" href="$tests_8cpp.html#a3677c19fd7f5e97a58733e0a15082327" title=" " alt="" coords="159,5,236,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,32,143,25,144,30,109,37"/>
+<area shape="rect" id="Node000003" href="$PoleMatrix_8cpp.html#aa20f72601d5ff91f277b999d15b7d6c9" title="Operacion PoleMatrix." alt="" coords="157,55,239,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="109,50,142,55,141,61,109,55"/>
+<area shape="rect" id="Node000004" href="$R__x_8cpp.html#ab96741dfe3b3590793f2b318ceed5f53" title="Operacion R_x." alt="" coords="287,29,330,55"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="239,55,271,48,273,53,240,61"/>
+<area shape="rect" id="Node000006" href="$R__y_8cpp.html#a25114557991f92fd6b027118c591a98f" title="Operacion R_y." alt="" coords="287,79,330,104"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="240,74,273,81,271,86,239,79"/>
+<area shape="rect" id="Node000005" href="$matrix_8cpp.html#a56d60ea1f08402246a7cfd477d69a618" title="Crea una matriz de ceros." alt="" coords="378,55,431,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="331,45,364,54,362,59,330,50"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="330,84,363,75,364,80,331,89"/>
+</map>

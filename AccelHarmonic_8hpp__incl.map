@@ -1,0 +1,18 @@
+<map id="/github/workspace/include/AccelHarmonic.hpp" name="/github/workspace/include/AccelHarmonic.hpp">
+<area shape="rect" id="Node000001" title="Archivo cabecera de operacion AccelHarmonic." alt="" coords="5,5,178,46"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="8,241,66,267"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,48,55,70,42,95,34,129,31,164,35,226,30,226,26,164,29,128,37,93,51,67,69,45"/>
+<area shape="rect" id="Node000003" href="$matrix_8hpp.html" title="Archivo cabecera de operaciones de matrices." alt="" coords="122,168,202,193"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="113,45,130,67,146,93,156,123,162,151,157,152,151,124,141,95,126,70,108,48"/>
+<area shape="rect" id="Node000007" href="$global_8hpp.html" title="Archivo cabecera de operacion global." alt="" coords="52,94,131,120"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="94,46,94,78,89,78,89,46"/>
+<area shape="poly" id="edge5_Node000003_Node000002" title=" " alt="" coords="142,196,72,236,70,231,140,192"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="90,241,146,267"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="157,195,136,229,131,226,153,192"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="170,241,229,267"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="171,192,189,226,184,229,166,195"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="253,241,324,267"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="185,192,255,231,253,236,182,196"/>
+<area shape="poly" id="edge8_Node000007_Node000002" title=" " alt="" coords="90,121,49,228,44,226,85,119"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="105,118,141,155,138,158,101,122"/>
+</map>

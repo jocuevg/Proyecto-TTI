@@ -1,0 +1,28 @@
+<map id="AccelHarmonic" name="AccelHarmonic">
+<area shape="rect" id="Node000001" title="Operacion AccelHarmonic." alt="" coords="733,131,843,156"/>
+<area shape="rect" id="Node000002" href="$Accel_8cpp.html#a28040ec3672b4e1805218ad1cd43bfa0" title="Operacion Accel." alt="" coords="404,55,459,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="751,125,719,109,684,95,622,82,559,74,459,70,459,64,560,69,623,76,686,90,722,104,754,120"/>
+<area shape="rect" id="Node000007" href="$tests_8cpp.html#a9ba4abccdacbc2fbee304e884c7bd9ab" title=" " alt="" coords="554,105,685,131"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="717,136,685,131,686,125,718,130"/>
+<area shape="rect" id="Node000008" href="$G__AccelHarmonic_8cpp.html#a8c1900d3aa2aceb61387b84a92e17818" title="Operacion G_AccelHarmonic." alt="" coords="556,155,683,180"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="718,156,684,161,683,156,717,151"/>
+<area shape="rect" id="Node000010" href="$VarEqn_8cpp.html#a6e153d0ae05034cb5b346189ebb847d3" title="Operacion VarEqn." alt="" coords="400,205,463,231"/>
+<area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="753,166,721,182,686,195,625,209,564,216,464,221,464,216,563,211,624,203,684,190,719,177,751,162"/>
+<area shape="rect" id="Node000003" href="$tests_8cpp.html#ad6e00c9978210449973a47573878ff32" title=" " alt="" coords="228,5,303,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="389,58,302,32,304,27,390,53"/>
+<area shape="rect" id="Node000006" href="$tests_8cpp.html#a04797c4f0e3862eb9efe1ae9ba9163c7" title=" " alt="" coords="221,55,309,80"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="389,70,310,70,310,65,389,65"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp.html#a438723717e25f3ab29c50c261ed54996" title=" " alt="" coords="103,105,173,131"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="227,42,223,44,184,77,154,107,150,103,180,73,219,40,224,37"/>
+<area shape="rect" id="Node000005" href="$tests_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,105,55,131"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="87,121,55,121,55,116,87,116"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="218,89,173,107,171,102,216,84"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="538,121,174,121,174,116,538,116"/>
+<area shape="rect" id="Node000009" href="$tests_8cpp.html#a7e46fc50fef8144a1c99e992e44d5391" title=" " alt="" coords="357,156,506,182"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="540,171,506,171,506,166,540,165"/>
+<area shape="poly" id="edge12_Node000008_Node000010" title=" " alt="" coords="555,188,464,212,463,207,554,182"/>
+<area shape="poly" id="edge11_Node000009_Node000004" title=" " alt="" coords="341,159,221,139,173,129,174,124,221,134,342,154"/>
+<area shape="rect" id="Node000011" href="$tests_8cpp.html#a47e267fa98a83e79696470d1b6e67569" title=" " alt="" coords="223,207,307,232"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="384,221,308,222,308,216,384,216"/>
+<area shape="poly" id="edge14_Node000011_Node000004" title=" " alt="" coords="232,199,219,190,152,133,156,129,223,185,235,195"/>
+</map>

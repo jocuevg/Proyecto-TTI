@@ -1,0 +1,7 @@
+<map id="m_extractRow_01" name="m_extractRow_01">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,131,56"/>
+<area shape="rect" id="Node000002" href="$matrix_8cpp.html#a34744ec1ee4339cefe35aaf2df4cc754" title="Extrae la fila n de la matriz." alt="" coords="179,5,267,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,31,163,25,164,30,132,36"/>
+<area shape="rect" id="Node000003" href="$tests_8cpp.html#a3677c19fd7f5e97a58733e0a15082327" title=" " alt="" coords="184,55,262,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="132,51,169,57,168,62,131,56"/>
+</map>

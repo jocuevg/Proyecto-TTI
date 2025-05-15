@@ -1,0 +1,33 @@
+<map id="Legendre" name="Legendre">
+<area shape="rect" id="Node000001" title="Operacion Legendre." alt="" coords="891,207,967,232"/>
+<area shape="rect" id="Node000002" href="$AccelHarmonic_8cpp.html#a97ea72b6a1426f18c34d295e50b8fc4b" title="Operacion AccelHarmonic." alt="" coords="733,156,843,182"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="876,203,825,185,827,180,878,198"/>
+<area shape="rect" id="Node000013" href="$tests_8cpp.html#ac482aba5ccf79b45ddd3ad6e951cfe03" title=" " alt="" coords="740,231,836,256"/>
+<area shape="poly" id="edge17_Node000001_Node000013" title=" " alt="" coords="876,231,837,238,836,233,875,226"/>
+<area shape="rect" id="Node000003" href="$Accel_8cpp.html#a28040ec3672b4e1805218ad1cd43bfa0" title="Operacion Accel." alt="" coords="404,55,459,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="761,148,726,120,684,97,623,79,560,71,503,68,459,69,459,63,504,63,561,65,624,74,686,92,729,115,765,144"/>
+<area shape="rect" id="Node000008" href="$tests_8cpp.html#a9ba4abccdacbc2fbee304e884c7bd9ab" title=" " alt="" coords="554,107,685,132"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="726,154,665,136,667,130,728,149"/>
+<area shape="rect" id="Node000009" href="$G__AccelHarmonic_8cpp.html#a8c1900d3aa2aceb61387b84a92e17818" title="Operacion G_AccelHarmonic." alt="" coords="556,156,683,182"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="717,172,683,172,683,166,717,166"/>
+<area shape="rect" id="Node000011" href="$VarEqn_8cpp.html#a6e153d0ae05034cb5b346189ebb847d3" title="Operacion VarEqn." alt="" coords="400,207,463,232"/>
+<area shape="poly" id="edge16_Node000002_Node000011" title=" " alt="" coords="725,189,685,197,563,213,464,220,463,215,562,207,685,192,724,183"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp.html#ad6e00c9978210449973a47573878ff32" title=" " alt="" coords="228,5,303,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="389,58,302,32,304,27,390,53"/>
+<area shape="rect" id="Node000007" href="$tests_8cpp.html#a04797c4f0e3862eb9efe1ae9ba9163c7" title=" " alt="" coords="221,55,309,80"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="389,70,310,70,310,65,389,65"/>
+<area shape="rect" id="Node000005" href="$tests_8cpp.html#a438723717e25f3ab29c50c261ed54996" title=" " alt="" coords="103,131,173,156"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="226,42,223,44,179,90,150,132,145,129,175,87,219,40,223,38"/>
+<area shape="rect" id="Node000006" href="$tests_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,131,55,156"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="87,146,55,146,55,141,87,141"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="231,91,162,132,160,128,228,86"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="539,125,221,139,174,143,173,138,221,134,538,119"/>
+<area shape="rect" id="Node000010" href="$tests_8cpp.html#a7e46fc50fef8144a1c99e992e44d5391" title=" " alt="" coords="357,156,506,182"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="540,172,506,172,506,166,540,166"/>
+<area shape="poly" id="edge13_Node000009_Node000011" title=" " alt="" coords="555,189,464,214,463,209,554,184"/>
+<area shape="poly" id="edge12_Node000010_Node000005" title=" " alt="" coords="341,164,173,149,174,144,342,158"/>
+<area shape="rect" id="Node000012" href="$tests_8cpp.html#a47e267fa98a83e79696470d1b6e67569" title=" " alt="" coords="223,207,307,232"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="384,222,308,222,308,217,384,217"/>
+<area shape="poly" id="edge15_Node000012_Node000005" title=" " alt="" coords="228,201,160,159,162,155,231,196"/>
+<area shape="poly" id="edge18_Node000013_Node000005" title=" " alt="" coords="726,263,625,283,562,290,495,295,425,294,355,287,286,272,220,247,193,229,171,204,143,158,147,156,175,201,196,225,222,242,287,267,356,282,426,289,495,290,562,285,624,277,725,258"/>
+</map>
