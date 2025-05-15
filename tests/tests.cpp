@@ -47,6 +47,7 @@
 #include "..\include\GHAMatrix.hpp"
 #include "..\include\Accel.hpp"
 #include "..\include\VarEqn.hpp"
+#include "..\include\DEInteg.hpp"
 #include <cstdio>
 #include <cmath>
 #include <iomanip>
@@ -1196,6 +1197,31 @@ int VarEqn_01(){
 	return 0;
 }
 
+int DEInteg_01(){
+
+	Matrix A(6,1); 
+	A(1,1) = 6221397.62857869;
+	A(2,1) = 2867713.77965738;
+	A(3,1) = 3006155.98509949;
+	A(4,1) = 4645.04725161806;
+	A(5,1) = -2752.21591588204;
+	A(6,1) = -7507.99940987031;
+
+	Matrix C = DEInteg(Accel,0.0,-134.999991953373,1e-13,1e-6,6,A);
+
+	Matrix R(6,1); 
+	R(1,1) = 5542555.89427451;
+	R(2,1) = 3213514.83814162;
+	R(3,1) = 3990892.92789074;
+	R(4,1) = 5394.06894044389;
+	R(5,1) = -2365.21290574021;
+	R(6,1) = -7061.8448137347;
+
+	_assert(m_equals(R,C,1e-1));
+	
+	return 0;
+}
+
 int all_tests()
 {
     _verify(m_sum_01);
@@ -1255,6 +1281,7 @@ int all_tests()
 	_verify(GHAMatrix_01);
 	_verify(Accel_01);
 	_verify(VarEqn_01);
+	_verify(DEInteg_01);
 
     return 0;
 }
@@ -1265,6 +1292,7 @@ int main()
 	eop19620101(21413);
 	DE430Coeff(2285,1020);
 	GGM03S(181);
+	GEOS3(46);
 
 	AuxParam.Mjd_UTC = 49746.1112847881;
 	AuxParam.Mjd_TT = 49746.1108586111;

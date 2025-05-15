@@ -21,6 +21,8 @@ Matrix &DEInteg(Matrix &func(double t, Matrix &y), double t, double tout, double
     double twou = 2 * __DBL_EPSILON__;
     double fouru = 4 * __DBL_EPSILON__;
 
+    STATE DE_STATE;
+
     DE_STATE.DE_INIT = 1;     // Restart integration
     DE_STATE.DE_DONE = 2;     // Successful step
     DE_STATE.DE_BADACC = 3;   // Accuracy requirement could not be achieved
@@ -84,7 +86,7 @@ Matrix &DEInteg(Matrix &func(double t, Matrix &y), double t, double tout, double
     // Return, if output time equals input time
 
     if (t == tout) // No integration
-        return;
+        return y;
 
     // Test for improper parameters
 
@@ -98,7 +100,7 @@ Matrix &DEInteg(Matrix &func(double t, Matrix &y), double t, double tout, double
          (t != told)))
     {
         State_ = DE_STATE.DE_INVPARAM; // Set error code
-        return;                        // Exit
+        return y;                        // Exit
     }
 
     // On each call set interval of integration and counter for
