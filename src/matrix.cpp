@@ -49,7 +49,7 @@ Matrix::Matrix(const int v_size)
 {
 	if (v_size < 0)
 	{
-		cout << "Vector create: error in n_size\n";
+		cout << "Vector create: error in v_size\n";
 		exit(EXIT_FAILURE);
 	}
 
@@ -81,7 +81,7 @@ double &Matrix::operator()(const int n)
 {
 	if (n <= 0 || n > this->n_row * this->n_column)
 	{
-		cout << "Vector get: error in row/column\n";
+		cout << "Vector get: error in index\n";
 		exit(EXIT_FAILURE);
 	}
 
@@ -92,7 +92,7 @@ Matrix &Matrix::operator+(Matrix &m)
 {
 	if (this->n_row != m.n_row || this->n_column != m.n_column)
 	{
-		cout << "Matrix sum: error in n_row/n_column\n";
+		cout << "Matrix sum matrix: error in n_row/n_column\n";
 		exit(EXIT_FAILURE);
 	}
 
@@ -113,7 +113,7 @@ Matrix &Matrix::operator-(Matrix &m)
 {
 	if (this->n_row != m.n_row || this->n_column != m.n_column)
 	{
-		cout << "Matrix sub: error in n_row/n_column\n";
+		cout << "Matrix sub matrix: error in n_row/n_column\n";
 		exit(EXIT_FAILURE);
 	}
 
@@ -173,7 +173,7 @@ Matrix &Matrix::operator*(Matrix &m)
 {
 	if (this->n_column != m.n_row)
 	{
-		cout << "Matrix sub: error in n_row/n_column\n";
+		cout << "Matrix mul matrix: error in n_row/n_column\n";
 		exit(EXIT_FAILURE);
 	}
 
@@ -203,7 +203,7 @@ Matrix &Matrix::operator=(Matrix &m)
 
 	if (this->data == NULL)
 	{
-		cout << "Matrix create: error in data\n";
+		cout << "Matrix asignacion: error in data\n";
 		exit(EXIT_FAILURE);
 	}
 
@@ -399,7 +399,7 @@ Matrix &Matrix::operator/(const double x)
 {
 	if (x == 0)
 	{
-		cout << "Matrix div: error in x is zero\n";
+		cout << "Matrix div double: error in double is zero\n";
 		exit(EXIT_FAILURE);
 	}
 
@@ -421,7 +421,7 @@ double norm(Matrix &m)
 
 	if (m.n_row != 1)
 	{
-		cout << "Matrix inversion error: Matrix is not square\n";
+		cout << "Vector norm error: rows not 1\n";
 		exit(EXIT_FAILURE);
 	}
 	double res = 0;
@@ -439,7 +439,7 @@ double dot(Matrix &m, Matrix &n)
 
 	if (m.n_row != 1 || n.n_row != 1 || m.n_column != n.n_column)
 	{
-		cout << "Matrix inversion error: Matrix is not square\n";
+		cout << "Matrix dot error: error in m/n\n";
 		exit(EXIT_FAILURE);
 	}
 	double res = 0;
@@ -457,7 +457,7 @@ Matrix &cross(Matrix &m, Matrix &n)
 
 	if (m.n_row != 1 || n.n_row != 1 || m.n_column != n.n_column || m.n_column != 3)
 	{
-		cout << "Matrix inversion error: Matrix is not square\n";
+		cout << "Matrix cross error: error in m/n\n";
 		exit(EXIT_FAILURE);
 	}
 
@@ -493,7 +493,7 @@ Matrix &extract_row(Matrix &m, const int n)
 {
 	if (n <= 0 || n > m.n_row)
 	{
-		cout << "Matrix get: error in row\n";
+		cout << "Matrix get row: error in index\n";
 		exit(EXIT_FAILURE);
 	}
 
@@ -511,7 +511,7 @@ Matrix &extract_column(Matrix &m, const int n)
 {
 	if (n <= 0 || n > m.n_column)
 	{
-		cout << "Matrix get: error in column\n";
+		cout << "Matrix get column: error in index\n";
 		exit(EXIT_FAILURE);
 	}
 
@@ -529,7 +529,7 @@ Matrix &union_vector(Matrix &m, Matrix &k)
 {
 	if (m.n_row != 1 || k.n_row != 1)
 	{
-		cout << "Vector union: error in vector\n";
+		cout << "Vector union: rows not 1\n";
 		exit(EXIT_FAILURE);
 	}
 
@@ -567,7 +567,7 @@ Matrix & assign_column(Matrix&m,Matrix&k, const int n){
 Matrix & assign_row(Matrix&m,Matrix&k,const int n){
 	if (k.n_row != 1 || k.n_column != m.n_column || n<=0 || n>m.n_row)
 	{
-		cout << "Assign column: error in vector/index\n";
+		cout << "Assign row: error in vector/index\n";
 		exit(EXIT_FAILURE);
 	}
 

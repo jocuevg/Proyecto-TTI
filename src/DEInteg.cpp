@@ -267,6 +267,7 @@ Matrix &DEInteg(Matrix &func(double t, Matrix &y), double t, double tout, double
             return y;
         }
 
+
         if (start)
         {
             // Initialize. Compute appropriate step size for first step.
@@ -501,6 +502,7 @@ Matrix &DEInteg(Matrix &func(double t, Matrix &y), double t, double tout, double
             temp5 = absh * sqrt(erk);
             err = temp5 * (g(k + 1, 1) - g(kp1 + 1, 1));
             erk = temp5 * sig(kp1 + 1, 1) * gstr(k + 1);
+
             knew = k;
 
             // Test if order should be lowered
@@ -567,14 +569,16 @@ Matrix &DEInteg(Matrix &func(double t, Matrix &y), double t, double tout, double
                 temp2 = 0.5;
                 if (ifail > 3)
                 {
-                    if (p5eps < 0.25 * erk)
+                    if (p5eps < 0.25 * erk){
                         temp2 = sqrt(p5eps / erk);
+                    }
                 }
                 if (ifail >= 3)
                     knew = 1;
-
+                        
                 h = temp2 * h;
                 k = knew;
+
                 if (fabs(h) < fouru * fabs(x))
                 {
                     crash = true;

@@ -23,7 +23,7 @@
 #include "..\include\G_AccelHarmonic.hpp"
 #include "..\include\Sat_const.hpp"
 
-Matrix &VarEqn(double x, Matrix &yPhi)
+Matrix& VarEqn(double x, Matrix &yPhi)
 {
     auto [x_pole, y_pole, UT1_UTC, LOD, dpsi, deps, dx_pole, dy_pole, TAI_UTC] = IERS(AuxParam.Mjd_UTC, 'l');
     auto [UT1_TAI, UTC_GPS, UT1_GPS, TT_UTC, GPS_UTC] = timediff(UT1_UTC, TAI_UTC);
@@ -51,7 +51,7 @@ Matrix &VarEqn(double x, Matrix &yPhi)
     Matrix &G = G_AccelHarmonic(r, E, AuxParam.n, AuxParam.m);
 
     // Time derivative of state transition matrix
-    Matrix &yPhip = zeros(42, 1);
+    Matrix &yPhip = zeros(42);
     Matrix &dfdy = zeros(6, 6);
 
     for (int i = 1; i <= 3; i++)
@@ -74,17 +74,17 @@ Matrix &VarEqn(double x, Matrix &yPhi)
     // Derivative of combined state vector and state transition matrix
     for (int i = 1; i <= 3; i++)
     {
-        yPhip(i, 1) = v(i, 1);     // dr/dt(i)
-        yPhip(i + 3, 1) = a(i, 1); // dv/dt(i)
+        yPhip(i) = v(i, 1);     // dr/dt(i)
+        yPhip(i + 3) = a(i, 1); // dv/dt(i)
     }
 
     for (int i = 1; i <= 6; i++)
     {
         for (int j = 1; j <= 6; j++)
         {
-            yPhip(6 * j + i, 1) = Phip(i, j); // dPhi/dt(i,j)
+            yPhip(6 * j + i) = Phip(i, j); // dPhi/dt(i,j)
         }
     }
 
-    return transpose(yPhip);
+    return yPhip;
 }
