@@ -52,10 +52,7 @@ Matrix& AccelHarmonic(Matrix& r, Matrix& E,int n_max,int m_max){
 
     // Body-fixed acceleration
     double r2xy = pow(r_bf(1),2)+pow(r_bf(2),2);
-
-            //cout<<dUdr<<"\n\n";
-            //cout<<dUdlon<<"\n\n";
-
+    
     double ax = (1/d*dUdr-r_bf(3)/(pow(d,2)*sqrt(r2xy))*dUdlatgc)*r_bf(1)-(1/r2xy*dUdlon)*r_bf(2);
     double ay = (1/d*dUdr-r_bf(3)/(pow(d,2)*sqrt(r2xy))*dUdlatgc)*r_bf(2)+(1/r2xy*dUdlon)*r_bf(1);
     double az =  1/d*dUdr*r_bf(3)+sqrt(r2xy)/pow(d,2)*dUdlatgc;

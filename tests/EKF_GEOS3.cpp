@@ -130,14 +130,16 @@ int main() {
 
         cout<<i<<":\n\n\n\n";
         yPhi = DEInteg(VarEqn,t_aux,t-t_old,1e-13,1e-6,42,yPhi);
-        
+        cout<<yPhi<<"\n";
 
         // Extract state transition matrices
         for (int j=1;j<=6;j++){
             assign_column(Phi,extract_vector(transpose(yPhi),6*j+1,6*j+6),j);
         }
-        
+
+        cout<<"Fallo:\n\n";
         Y = DEInteg(Accel,t_aux,t-t_old,1e-13,1e-6,6,Y_old);
+        cout<<Y<<"\n";
         
         // Topocentric coordinates
         theta = gmst(Mjd_UT1);                    // Earth rotation
@@ -155,6 +157,7 @@ int main() {
         
         // Measurement update
         Matrix &K=zeros(6,1);
+
         tie(K, Y, P) = MeasUpdate ( Y, obs(i,2), Azim, sigma_az, dAdY, P, 6 );
         
         // Elevation and partials

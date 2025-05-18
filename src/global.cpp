@@ -97,9 +97,9 @@ void GEOS3(int c){
         exit(EXIT_FAILURE);
     }
     
-    int  Y,MO,D,H,MI;
-    double S,AZ,EL,DIST;
-    char line[55],y[5],mo[3],d[3],h[3],mi[3],s[6],az[9],el[8],dist[11];
+    int  Y,MO,D,H,MI,S;
+    double AZ,EL,DIST;
+    char line[55],y[5],mo[3],d[3],h[3],mi[3],s[3],az[9],el[9],dist[10];
     for(int i=1;i<=c;i++){
 
         fgets(line,sizeof(line)+2,fp);
@@ -124,20 +124,20 @@ void GEOS3(int c){
         mi[2]='\0';
         MI = atoi(mi);
         
-        strncpy(s,&(line[18]),5);
-        s[5]='\0';
-        S = atof(s);
+        strncpy(s,&(line[18]),2);
+        s[2]='\0';
+        S = atoi(s);
 
         strncpy(az,&(line[25]),8);
         az[8]='\0';
         AZ = atof(az);
 
-        strncpy(el,&(line[35]),7);
-        el[7]='\0';
+        strncpy(el,&(line[34]),8);
+        el[8]='\0';
         EL = atof(el);
 
-        strncpy(dist,&(line[44]),10);
-        dist[10]='\0';
+        strncpy(dist,&(line[44]),9);
+        dist[9]='\0';
         DIST = atof(dist);
 
         obs(i,1)= Mjday(Y,MO,D,H,MI,S);
