@@ -51,6 +51,7 @@
 #include "..\include\Geodetic.hpp"
 #include "..\include\angl.hpp"
 #include "..\include\elements.hpp"
+#include "..\include\unit.hpp"
 #include <cstdio>
 #include <cmath>
 #include <iomanip>
@@ -1270,6 +1271,21 @@ int elements_01(){
 	return 0;
 }
 
+int unit_01(){
+
+	Matrix A(3);
+	A(1)=1;A(2)=2;A(3)=3;
+	
+	Matrix R = unit(transpose(A));
+
+	Matrix& C=zeros(3);
+	C(1)=0.267261241912424;C(2)=0.534522483824849;C(3)=0.801783725737273;
+
+	_assert(m_equals(R,C,1e-10));
+
+	return 0;
+}
+
 int all_tests()
 {
     _verify(m_sum_01);
@@ -1333,6 +1349,7 @@ int all_tests()
 	_verify(Geodetic_01);
 	_verify(angl_01);
 	_verify(elements_01);
+	_verify(unit_01);
 
     return 0;
 }
