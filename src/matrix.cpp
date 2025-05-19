@@ -196,6 +196,9 @@ Matrix &Matrix::operator*(Matrix &m)
 
 Matrix &Matrix::operator=(Matrix &m)
 {
+	if (this == &m)
+        return *this;
+		
 	this->n_row=m.n_row;
 	this->n_column=m.n_column;
 

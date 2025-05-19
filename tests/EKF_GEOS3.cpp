@@ -79,9 +79,9 @@ int main() {
 
     double t_aux=0.0;
     Matrix& m_aux  = zeros(3,3);
+    Matrix& m_aux2  = zeros(3,3);
 
-    m_aux = DEInteg(Accel,t_aux,-(obs(9,1)-Mjd0)*86400.0,1e-13,1e-6,6,Y0_apr);
-    Matrix& Y = m_aux;
+    Matrix& Y = DEInteg(Accel,t_aux,-(obs(9,1)-Mjd0)*86400.0,1e-13,1e-6,6,Y0_apr);
 
     Matrix& P = zeros(6,6);
     
@@ -140,23 +140,14 @@ int main() {
             }
         }
 
-        cout<<i<<":\n\n\n\n";
-        m_aux = DEInteg(VarEqn,t_aux,t-t_old,1e-13,1e-6,42,yPhi);
-        yPhi = m_aux;
-        cout<<yPhi<<"\n";
+        yPhi = DEInteg(VarEqn,t_aux,t-t_old,1e-13,1e-6,42,yPhi);
 
         // Extract state transition matrices
         for (int j=1;j<=6;j++){
             assign_column(Phi,extract_vector(transpose(yPhi),6*j+1,6*j+6),j);
         }
 
-        m_aux = DEInteg(Accel,t_aux,t-t_old,1e-13,1e-6,6,Y_old);
-        cout<<"m_aux:\n"<<m_aux<<"\n";
-        cout<<"Y:\n"<<Y<<"\n\n";
-        cout<<"Fallo: Y = m_aux\n\n";
-        Y = m_aux;
-        cout<<"m_aux:\n"<<m_aux<<"\n";
-        cout<<"Y:\n"<<Y<<"\n\n";
+        Y = DEInteg(Accel,t_aux,t-t_old,1e-13,1e-6,6,Y_old);
         
         // Topocentric coordinates
         theta = gmst(Mjd_UT1);                    // Earth rotation
@@ -198,16 +189,13 @@ int main() {
 
     }
 
-    cout<<"AA\n";
-
     tie(x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC) = IERS(obs(46,1),'l');
     tie(UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC) = timediff(UT1_UTC,TAI_UTC);
     Mjd_TT = Mjd_UTC + TT_UTC/86400;
     AuxParam.Mjd_UTC = Mjd_UTC;
     AuxParam.Mjd_TT = Mjd_TT;
 
-    m_aux = DEInteg(Accel,t_aux,-(obs(46,1)-obs(1,1))*86400.0,1e-13,1e-6,6,Y);
-    Matrix& Y0 = m_aux;
+    Matrix& Y0 = DEInteg(Accel,t_aux,-(obs(46,1)-obs(1,1))*86400.0,1e-13,1e-6,6,Y);
 
     Matrix& Y_true = zeros(6); 
     Y_true(1)= 5753.173e3; 

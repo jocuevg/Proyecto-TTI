@@ -189,7 +189,6 @@ Matrix &DEInteg(Matrix &func(double t, Matrix &y), double t, double tout, double
             t = tout;                  // Set independent variable
             told = t;                  // Store independent variable
             OldPermit = PermitTOUT;
-            cout<<y<<"\n";
             return y; // Normal exit
         }
 
