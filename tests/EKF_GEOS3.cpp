@@ -78,8 +78,10 @@ int main() {
     int n_eqn  = 6;
 
     double t_aux=0.0;
+    Matrix& m_aux  = zeros(3,3);
 
-    Matrix& Y = DEInteg(Accel,t_aux,-(obs(9,1)-Mjd0)*86400.0,1e-13,1e-6,6,Y0_apr);
+    m_aux = DEInteg(Accel,t_aux,-(obs(9,1)-Mjd0)*86400.0,1e-13,1e-6,6,Y0_apr);
+    Matrix& Y = m_aux;
 
     Matrix& P = zeros(6,6);
     
@@ -94,9 +96,19 @@ int main() {
 
     Matrix& yPhi = zeros(42,1);
     Matrix& Phi  = zeros(6,6);
+    Matrix &Y_old = zeros(3,3);
+    Matrix &U = zeros(3,3);
+    Matrix &r = zeros(3,1);
+    Matrix &s = zeros(3,1);
+    Matrix &dAds=zeros(3),&dEds=zeros(3);
+    Matrix &dAdY = zeros(6);
+    Matrix &dEdY = zeros(6);
+    Matrix &dDdY = zeros(6);
+    Matrix &K=zeros(6,1);
+    Matrix& dDds = zeros(3);
 
     // Measurement loop
-    double t = 0.0;
+    double t = 0.0,Dist;
 
     double x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC,UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC,Mjd_TT,Mjd_UT1,t_old,theta,Azim, Elev;
 
@@ -104,7 +116,7 @@ int main() {
         
         // Previous step
         t_old = t;
-        Matrix& Y_old = Y;
+        Y_old = Y;
         
         // Time increment and propagation
         Mjd_UTC = obs(i,1);                       // Modified Julian Date
@@ -129,7 +141,8 @@ int main() {
         }
 
         cout<<i<<":\n\n\n\n";
-        yPhi = DEInteg(VarEqn,t_aux,t-t_old,1e-13,1e-6,42,yPhi);
+        m_aux = DEInteg(VarEqn,t_aux,t-t_old,1e-13,1e-6,42,yPhi);
+        yPhi = m_aux;
         cout<<yPhi<<"\n";
 
         // Extract state transition matrices
@@ -138,25 +151,27 @@ int main() {
         }
 
         cout<<"Fallo:\n\n";
-        Y = DEInteg(Accel,t_aux,t-t_old,1e-13,1e-6,6,Y_old);
+        m_aux = DEInteg(Accel,t_aux,t-t_old,1e-13,1e-6,6,Y_old);
+        Y = m_aux;
         cout<<Y<<"\n";
         
         // Topocentric coordinates
         theta = gmst(Mjd_UT1);                    // Earth rotation
-        Matrix& U = R_z(theta);
-        Matrix& r = transpose(extract_vector(transpose(Y),1,3));
-        Matrix& s = LT*(U*r-Rs);                          // Topocentric position [m]
+        U = R_z(theta);
+        r = transpose(extract_vector(transpose(Y),1,3));
+        s = LT*(U*r-Rs);                          // Topocentric position [m]
         
         // Time update
         P = TimeUpdate(P, Phi);
             
         // Azimuth and partials
-        Matrix &dAds=zeros(3),&dEds=zeros(3);
+        dAds=zeros(3);
+        dEds=zeros(3);
         tie(Azim, Elev, dAds, dEds) = AzElPa(s);     // Azimuth, Elevation
-        Matrix& dAdY = union_vector(dAds*LT*U,zeros(1,3));
+        dAdY = union_vector(dAds*LT*U,zeros(1,3));
         
         // Measurement update
-        Matrix &K=zeros(6,1);
+        K=zeros(6,1);
 
         tie(K, Y, P) = MeasUpdate ( Y, obs(i,2), Azim, sigma_az, dAdY, P, 6 );
         
@@ -164,7 +179,7 @@ int main() {
         r = transpose(extract_vector(transpose(Y),1,3));
         s = LT*(U*r-Rs);                          // Topocentric position [m]
         tie(Azim, Elev, dAds, dEds) = AzElPa(s);     // Azimuth, Elevation
-        Matrix& dEdY = union_vector(dEds*LT*U,zeros(1,3));
+        dEdY = union_vector(dEds*LT*U,zeros(1,3));
         
         // Measurement update
         tie(K, Y, P) = MeasUpdate ( Y, obs(i,3), Elev, sigma_el, dEdY, P, 6 );
@@ -172,8 +187,8 @@ int main() {
         // Range and partials
         r = transpose(extract_vector(transpose(Y),1,3));
         s = LT*(U*r-Rs);                          // Topocentric position [m]
-        double Dist = norm(transpose(s)); Matrix& dDds = transpose(s/Dist);         // Range
-        Matrix& dDdY = union_vector(dDds*LT*U,zeros(1,3));
+        Dist = norm(transpose(s)); dDds = transpose(s/Dist);         // Range
+        dDdY = union_vector(dDds*LT*U,zeros(1,3));
         
         // Measurement update
         tie(K, Y, P) = MeasUpdate ( Y, obs(i,4), Dist, sigma_range, dDdY, P, 6 );
@@ -188,7 +203,8 @@ int main() {
     AuxParam.Mjd_UTC = Mjd_UTC;
     AuxParam.Mjd_TT = Mjd_TT;
 
-    Matrix& Y0 = DEInteg(Accel,t_aux,-(obs(46,1)-obs(1,1))*86400.0,1e-13,1e-6,6,Y);
+    m_aux = DEInteg(Accel,t_aux,-(obs(46,1)-obs(1,1))*86400.0,1e-13,1e-6,6,Y);
+    Matrix& Y0 = m_aux;
 
     Matrix& Y_true = zeros(6); 
     Y_true(1)= 5753.173e3; 
