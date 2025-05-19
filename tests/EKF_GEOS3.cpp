@@ -150,10 +150,13 @@ int main() {
             assign_column(Phi,extract_vector(transpose(yPhi),6*j+1,6*j+6),j);
         }
 
-        cout<<"Fallo:\n\n";
         m_aux = DEInteg(Accel,t_aux,t-t_old,1e-13,1e-6,6,Y_old);
+        cout<<"m_aux:\n"<<m_aux<<"\n";
+        cout<<"Y:\n"<<Y<<"\n\n";
+        cout<<"Fallo: Y = m_aux\n\n";
         Y = m_aux;
-        cout<<Y<<"\n";
+        cout<<"m_aux:\n"<<m_aux<<"\n";
+        cout<<"Y:\n"<<Y<<"\n\n";
         
         // Topocentric coordinates
         theta = gmst(Mjd_UT1);                    // Earth rotation
