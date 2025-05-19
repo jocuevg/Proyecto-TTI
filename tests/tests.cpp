@@ -48,6 +48,9 @@
 #include "..\include\Accel.hpp"
 #include "..\include\VarEqn.hpp"
 #include "..\include\DEInteg.hpp"
+#include "..\include\Geodetic.hpp"
+#include "..\include\angl.hpp"
+#include "..\include\elements.hpp"
 #include <cstdio>
 #include <cmath>
 #include <iomanip>
@@ -1222,6 +1225,51 @@ int DEInteg_01(){
 	return 0;
 }
 
+int Geodetic_01(){
+
+	Matrix A(3);
+	A(1)=1;A(2)=1;A(3)=1;
+	auto[lon,lan,h] = Geodetic(transpose(A));
+	
+	_assert(fabs(lon-0.785398163397448)<1e-10);
+	_assert(fabs(lan-1.57076331705131)<1e-10);
+	_assert(fabs(h+6356750.61656881)<1e-8);
+
+	return 0;
+}
+
+int angl_01(){
+
+	Matrix A(3);
+	A(1)=1;A(2)=1;A(3)=1;
+	Matrix B(3);
+	B(1)=2;B(2)=1;B(3)=1;
+	double x = angl(transpose(A),transpose(B));
+	
+	_assert(fabs(x-0.339836909454122)<1e-10);
+
+	return 0;
+}
+
+int elements_01(){
+
+	Matrix A(6);
+	A(1)=6221397.62857869;A(2)=2867713.77965738;A(3)=3006155.98509949;
+	A(4)=4645.04725161806;A(5)=-2752.21591588204;A(6)=-7507.99940987031;
+	
+	auto[a,b,c,d,e,f,g] = elements(A);
+	
+	_assert(fabs(a-12001693.597214)<1e-6);
+	_assert(fabs(b-18943922.6607145)<1e-6);
+	_assert(fabs(c-0.605361104987026)<1e-10);
+	_assert(fabs(d-2.02656295535017)<1e-10);
+	_assert(fabs(e-3.35671076650829)<1e-10);
+	_assert(fabs(f-2.73757289772562)<1e-10);
+	_assert(fabs(g-6.27144693341967)<1e-10);
+
+	return 0;
+}
+
 int all_tests()
 {
     _verify(m_sum_01);
@@ -1282,6 +1330,9 @@ int all_tests()
 	_verify(Accel_01);
 	_verify(VarEqn_01);
 	_verify(DEInteg_01);
+	_verify(Geodetic_01);
+	_verify(angl_01);
+	_verify(elements_01);
 
     return 0;
 }
