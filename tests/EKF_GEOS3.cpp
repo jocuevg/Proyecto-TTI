@@ -217,7 +217,6 @@ int main() {
     printf("dVx%8.1f [m/s]\n",Y0(4,1)-Y_true(4));
     printf("dVy%8.1f [m/s]\n",Y0(5,1)-Y_true(5));
     printf("dVz%8.1f [m/s]\n",Y0(6,1)-Y_true(6));
-    printf("Tiempo: %lf",diff);
 
     return 0;
 }
