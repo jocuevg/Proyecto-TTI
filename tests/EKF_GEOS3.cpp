@@ -32,6 +32,7 @@
 using namespace std;
 
 int main() {
+    clock_t start=clock();
 
     int nobs = 46;
 
@@ -205,6 +206,9 @@ int main() {
     Y_true(5)= -1.924299e3;
     Y_true(6)= -5.728216e3;
 
+    clock_t end=clock();
+    double diff=((double)(end-start));
+
     printf("\nError of Position Estimation\n");
     printf("dX%10.1f [m]\n",Y0(1,1)-Y_true(1));
     printf("dY%10.1f [m]\n",Y0(2,1)-Y_true(2));
@@ -213,6 +217,7 @@ int main() {
     printf("dVx%8.1f [m/s]\n",Y0(4,1)-Y_true(4));
     printf("dVy%8.1f [m/s]\n",Y0(5,1)-Y_true(5));
     printf("dVz%8.1f [m/s]\n",Y0(6,1)-Y_true(6));
+    printf("Tiempo: %lf",diff);
 
     return 0;
 }
