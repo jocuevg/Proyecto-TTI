@@ -14,7 +14,6 @@
 //------------------------------------------------------------------------------
 #ifndef _SATCONST_
 #define _SATCONST_
-#include <math.h>
 #include <cmath>
 
 // Mathematical constants

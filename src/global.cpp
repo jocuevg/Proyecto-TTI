@@ -15,7 +15,7 @@
 #include "..\include\global.hpp"
 #include "..\include\Mjday.hpp"
 #include "..\include\Sat_const.hpp"
-#include <string.h>
+#include <cstring>
 using namespace std;
 
 Param AuxParam;
