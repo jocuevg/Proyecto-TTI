@@ -25,7 +25,7 @@ double angl(Matrix& vec1,Matrix& vec2){
 
     double theta;
 
-    if (magv1*magv2 > small^2){
+    if (magv1*magv2 > pow(small, 2)){
         double temp= dot(transpose(vec1),transpose(vec2)) / (magv1*magv2);
         if (abs( temp ) > 1.0){
             int sign;
