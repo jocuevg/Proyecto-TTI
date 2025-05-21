@@ -1,0 +1,16 @@
+<map id="AzElPa_01" name="AzElPa_01">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,104,90,130"/>
+<area shape="rect" id="Node000002" href="$AzElPa_8cpp.html#ae89a6c135135b96ec7057c45dced4159" title="Operacion AzElPa." alt="" coords="182,53,246,79"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,102,166,78,168,83,91,107"/>
+<area shape="rect" id="Node000005" href="$matrix_8cpp.html#a56d60ea1f08402246a7cfd477d69a618" title="Crea una matriz de ceros." alt="" coords="351,104,403,130"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="90,114,335,114,335,120,90,120"/>
+<area shape="rect" id="Node000006" href="$tests_8cpp.html#a9f3ad35aefc5627a241ac7f6d94998b0" title=" " alt="" coords="138,155,290,180"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="91,127,155,147,154,152,89,132"/>
+<area shape="rect" id="Node000003" href="$matrix_8cpp.html#a6051f8be055a7658461e1ddb60e704d8" title="Producto escalar entre dos vectores." alt="" coords="358,5,397,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="245,54,342,26,343,31,247,59"/>
+<area shape="rect" id="Node000004" href="$matrix_8cpp.html#acbd9778b697f9ad3da64ef53b850e2c9" title="Calcula la transpuesta de una matriz." alt="" coords="338,55,416,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="246,64,322,64,322,70,246,69"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="247,73,337,102,336,107,245,78"/>
+<area shape="rect" id="Node000007" href="$tests_8cpp.html#a3677c19fd7f5e97a58733e0a15082327" title=" " alt="" coords="338,155,416,180"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="290,165,323,165,323,170,290,170"/>
+</map>

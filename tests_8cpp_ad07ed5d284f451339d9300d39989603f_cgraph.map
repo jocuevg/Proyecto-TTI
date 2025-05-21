@@ -1,0 +1,7 @@
+<map id="m_inv_01" name="m_inv_01">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,83,56"/>
+<area shape="rect" id="Node000002" href="$matrix_8cpp.html#ad8d8519e7f94df41a4c5b535b4899222" title="Calcula la inversa de una matriz." alt="" coords="150,5,189,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,33,134,22,136,28,84,38"/>
+<area shape="rect" id="Node000003" href="$tests_8cpp.html#a3677c19fd7f5e97a58733e0a15082327" title=" " alt="" coords="131,55,208,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="84,48,116,55,115,60,83,54"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="Geodetic" name="Geodetic">
+<area shape="rect" id="Node000001" title="Operacion Geodetic." alt="" coords="363,5,437,31"/>
+<area shape="rect" id="Node000002" href="$tests_8cpp.html#a0123f3cf1eb42d55a4a8f4d67d5e4405" title=" " alt="" coords="221,5,315,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="347,21,316,21,316,16,347,16"/>
+<area shape="rect" id="Node000003" href="$tests_8cpp.html#a438723717e25f3ab29c50c261ed54996" title=" " alt="" coords="103,5,173,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="205,21,173,21,173,16,205,16"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>

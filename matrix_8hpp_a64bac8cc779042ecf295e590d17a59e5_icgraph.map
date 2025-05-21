@@ -1,0 +1,14 @@
+<map id="cross" name="cross">
+<area shape="rect" id="Node000001" title="Producto vectorial entre dos vectores de dimensión 3." alt="" coords="487,31,540,56"/>
+<area shape="rect" id="Node000002" href="$elements_8cpp.html#a5dd6d5680c9b5aafae7e21082e0ab75a" title="Operacion elements." alt="" coords="364,5,439,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="471,37,439,29,440,24,472,31"/>
+<area shape="rect" id="Node000006" href="$tests_8cpp.html#a92c4710d9227d409c39924406966293a" title=" " alt="" coords="222,56,315,82"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="471,50,316,67,315,61,471,45"/>
+<area shape="rect" id="Node000003" href="$tests_8cpp.html#a0e221d0fb85708adff3646b7b78d1b2e" title=" " alt="" coords="221,7,316,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="349,21,317,22,317,16,349,16"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp.html#a438723717e25f3ab29c50c261ed54996" title=" " alt="" coords="103,32,173,58"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="206,34,174,41,173,35,205,29"/>
+<area shape="rect" id="Node000005" href="$tests_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,32,55,58"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="87,48,55,48,55,42,87,42"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="207,60,173,54,174,49,208,55"/>
+</map>

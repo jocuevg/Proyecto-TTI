@@ -1,0 +1,12 @@
+<map id="angl_01" name="angl_01">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,79,72,104"/>
+<area shape="rect" id="Node000002" href="$angl_8cpp.html#af206beb61be4f584306f6fefed44eb90" title="Operacion angl." alt="" coords="120,53,165,79"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,81,104,73,105,78,72,86"/>
+<area shape="rect" id="Node000005" href="$matrix_8cpp.html#acbd9778b697f9ad3da64ef53b850e2c9" title="Calcula la transpuesta de una matriz." alt="" coords="213,104,291,130"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="72,93,198,108,197,113,72,98"/>
+<area shape="rect" id="Node000003" href="$matrix_8cpp.html#a6051f8be055a7658461e1ddb60e704d8" title="Producto escalar entre dos vectores." alt="" coords="232,5,272,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="164,54,217,30,219,35,166,59"/>
+<area shape="rect" id="Node000004" href="$matrix_8cpp.html#a907c9c6f53fc52d17e86b507b156536f" title="Calcula la norma euclídea de un vector." alt="" coords="227,55,277,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="165,64,211,64,211,70,165,69"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="166,74,210,95,208,99,164,79"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="LTC_01" name="LTC_01">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,73,80"/>
+<area shape="rect" id="Node000002" href="$LTC_8cpp.html#a27b89059a0c4bc52a9192df16ead3359" title="Operacion LTC." alt="" coords="136,29,182,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,58,120,48,121,53,74,63"/>
+<area shape="rect" id="Node000006" href="$tests_8cpp.html#a3677c19fd7f5e97a58733e0a15082327" title=" " alt="" coords="121,79,198,104"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="74,72,106,78,105,83,73,77"/>
+<area shape="rect" id="Node000003" href="$R__y_8cpp.html#a25114557991f92fd6b027118c591a98f" title="Operacion R_y." alt="" coords="246,5,289,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="182,34,230,24,231,29,184,40"/>
+<area shape="rect" id="Node000005" href="$R__z_8cpp.html#a4f688959a9ab144bf27d272e54bf7258" title="Operacion R_z." alt="" coords="246,55,289,80"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="184,45,231,56,230,62,182,50"/>
+<area shape="rect" id="Node000004" href="$matrix_8cpp.html#a56d60ea1f08402246a7cfd477d69a618" title="Crea una matriz de ceros." alt="" coords="337,31,390,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="290,21,323,30,321,35,289,26"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="289,60,322,51,323,56,290,65"/>
+</map>

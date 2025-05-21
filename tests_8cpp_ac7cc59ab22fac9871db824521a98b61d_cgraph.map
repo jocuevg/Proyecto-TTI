@@ -1,0 +1,7 @@
+<map id="m_trans_01" name="m_trans_01">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,95,56"/>
+<area shape="rect" id="Node000002" href="$tests_8cpp.html#a3677c19fd7f5e97a58733e0a15082327" title=" " alt="" coords="143,5,220,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,32,127,26,128,31,96,38"/>
+<area shape="rect" id="Node000003" href="$matrix_8cpp.html#acbd9778b697f9ad3da64ef53b850e2c9" title="Calcula la transpuesta de una matriz." alt="" coords="143,55,221,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="96,49,128,55,127,60,95,54"/>
+</map>

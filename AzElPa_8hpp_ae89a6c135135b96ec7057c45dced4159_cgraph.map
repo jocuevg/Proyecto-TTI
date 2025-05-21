@@ -1,0 +1,9 @@
+<map id="AzElPa" name="AzElPa">
+<area shape="rect" id="Node000001" title="Operacion AzElPa." alt="" coords="5,55,69,80"/>
+<area shape="rect" id="Node000002" href="$matrix_8cpp.html#a6051f8be055a7658461e1ddb60e704d8" title="Producto escalar entre dos vectores." alt="" coords="136,5,176,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="68,52,121,30,123,35,70,57"/>
+<area shape="rect" id="Node000003" href="$matrix_8cpp.html#acbd9778b697f9ad3da64ef53b850e2c9" title="Calcula la transpuesta de una matriz." alt="" coords="117,55,195,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="69,65,101,65,101,70,69,70"/>
+<area shape="rect" id="Node000004" href="$matrix_8cpp.html#a56d60ea1f08402246a7cfd477d69a618" title="Crea una matriz de ceros." alt="" coords="130,104,182,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="70,78,117,98,114,103,68,83"/>
+</map>

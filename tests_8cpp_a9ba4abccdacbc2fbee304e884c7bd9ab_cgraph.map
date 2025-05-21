@@ -1,0 +1,16 @@
+<map id="AccelHarmonic_01" name="AccelHarmonic_01">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,107,137,132"/>
+<area shape="rect" id="Node000002" href="$AccelHarmonic_8cpp.html#a97ea72b6a1426f18c34d295e50b8fc4b" title="Operacion AccelHarmonic." alt="" coords="185,81,295,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,107,169,102,170,107,137,112"/>
+<area shape="rect" id="Node000007" href="$tests_8cpp.html#a3677c19fd7f5e97a58733e0a15082327" title=" " alt="" coords="201,131,278,156"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="137,126,186,133,185,139,137,131"/>
+<area shape="rect" id="Node000003" href="$Legendre_8cpp.html#a55ce532de3c95506384990ae714dd99d" title="Operacion Legendre." alt="" coords="344,5,420,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="264,79,342,36,344,41,267,83"/>
+<area shape="rect" id="Node000004" href="$matrix_8cpp.html#a56d60ea1f08402246a7cfd477d69a618" title="Crea una matriz de ceros." alt="" coords="469,31,522,56"/>
+<area shape="poly" id="edge6_Node000002_Node000004" title=" " alt="" coords="295,81,454,49,455,54,296,86"/>
+<area shape="rect" id="Node000005" href="$matrix_8cpp.html#a907c9c6f53fc52d17e86b507b156536f" title="Calcula la norma euclídea de un vector." alt="" coords="357,107,407,132"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="296,101,342,110,341,115,295,107"/>
+<area shape="rect" id="Node000006" href="$matrix_8cpp.html#acbd9778b697f9ad3da64ef53b850e2c9" title="Calcula la transpuesta de una matriz." alt="" coords="343,156,421,182"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="274,105,296,116,348,145,346,150,294,121,272,110"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="421,24,455,32,454,37,420,29"/>
+</map>

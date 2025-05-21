@@ -1,0 +1,9 @@
+<map id="unit" name="unit">
+<area shape="rect" id="Node000001" title="Operacion unit." alt="" coords="332,5,375,31"/>
+<area shape="rect" id="Node000002" href="$tests_8cpp.html#a4c7872c4348612329e716dd90e5f25df" title=" " alt="" coords="221,5,284,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="316,21,285,21,285,16,316,16"/>
+<area shape="rect" id="Node000003" href="$tests_8cpp.html#a438723717e25f3ab29c50c261ed54996" title=" " alt="" coords="103,5,173,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="205,21,173,21,173,16,205,16"/>
+<area shape="rect" id="Node000004" href="$tests_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>

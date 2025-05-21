@@ -1,0 +1,15 @@
+<map id="unit_01" name="unit_01">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,69,107"/>
+<area shape="rect" id="Node000002" href="$tests_8cpp.html#a3677c19fd7f5e97a58733e0a15082327" title=" " alt="" coords="117,5,194,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,79,120,37,123,42,60,83"/>
+<area shape="rect" id="Node000003" href="$matrix_8cpp.html#acbd9778b697f9ad3da64ef53b850e2c9" title="Calcula la transpuesta de una matriz." alt="" coords="242,57,320,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="69,88,226,73,227,78,69,94"/>
+<area shape="rect" id="Node000004" href="$unit_8cpp.html#a53229dcf48de3553bf347403df3e124a" title="Operacion unit." alt="" coords="134,107,176,132"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="70,98,119,109,118,114,69,104"/>
+<area shape="rect" id="Node000006" href="$matrix_8cpp.html#a56d60ea1f08402246a7cfd477d69a618" title="Crea una matriz de ceros." alt="" coords="255,156,307,182"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="56,105,84,125,118,142,181,158,240,165,239,170,180,164,116,147,81,129,52,109"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="176,109,231,87,233,92,178,114"/>
+<area shape="rect" id="Node000005" href="$matrix_8cpp.html#a907c9c6f53fc52d17e86b507b156536f" title="Calcula la norma euclídea de un vector." alt="" coords="256,107,306,132"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="177,117,240,117,240,122,177,122"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="178,125,241,151,240,156,176,130"/>
+</map>
